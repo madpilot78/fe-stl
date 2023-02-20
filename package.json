@@ -1,0 +1,18 @@
+{
+  "name": "fe-stl",
+  "version": "0.0.1",
+  "description": "Fatture elettroniche stylesheet",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/madpilot78/fe-stl.git"
+  },
+  "keywords": [
+    "xml",
+    "stl"
+  ],
+  "author": "Guido Falsi <mad@madpilot.net>",
+  "license": "BSD-3-Clause",
+  "devDependencies": {
+    "tailwindcss": "^3.2.7"
+  }
+}
