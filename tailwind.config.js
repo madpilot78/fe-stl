@@ -1,5 +1,5 @@
 module.exports = {
-  content: [],
+  content: ['fe.xsl'],
   theme: {
     extend: {},
   },
