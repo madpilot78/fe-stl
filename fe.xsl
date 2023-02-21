@@ -218,7 +218,7 @@
                           contribuenti minimi
                         </xsl:when>
                         <xsl:when test="$RF='RF03'">
-                          nuove iniziative produttive - Non più valido in quanto abrogato dalla legge di stabilità 2015
+                          nuove iniziative produttive — Non più valido in quanto abrogato dalla legge di stabilità 2015
                         </xsl:when>
                         <xsl:when test="$RF='RF04'">
                           agricoltura e attività connesse e pesca
@@ -262,7 +262,7 @@
                           IVA per cassa P.A.
                         </xsl:when>
                         <xsl:when test="$RF='RF17'">
-                          IVA per cassa - art. 32-bis, D.L. 83/2012
+                          IVA per cassa — art. 32-bis, D.L. 83/2012
                         </xsl:when>
                         <xsl:when test="$RF='RF19'">
                           Regime forfettario
