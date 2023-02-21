@@ -86,7 +86,7 @@
         <div class="max-w-5xl min-w-[56rem] mx-auto p-0">
           <xsl:if test="a:FatturaElettronica/FatturaElettronicaHeader/CedentePrestatore">
             <div>
-              <img src="logo.png" class="w-24 h-24"/>
+              <img src="logo.png" class="w-24 h-24" />
               <xsl:for-each select="a:FatturaElettronica/FatturaElettronicaHeader/CedentePrestatore/DatiAnagrafici">
                 <div>
                   <xsl:if test="Anagrafica/Denominazione">
