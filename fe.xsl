@@ -198,73 +198,77 @@
                   </span>
                 </xsl:if>
                 <xsl:if test="RegimeFiscale">
-                  <div class="col-span-2 text-xs text-center">
+                  <span class="text-xs text-right">
+                    Regime fiscale:
+                  </span>
+                  <div class="text-xs">
                     <span>
                       <xsl:value-of select="RegimeFiscale" />
                     </span>
-                    <span class="ml-2">
+                    <span class="mx-1">—</span>
+                    <span>
                       <xsl:variable name="RF">
                         <xsl:value-of select="RegimeFiscale" />
                       </xsl:variable>
                       <xsl:choose>
                         <xsl:when test="$RF='RF01'">
-                          (ordinario)
+                          ordinario
                         </xsl:when>
                         <xsl:when test="$RF='RF02'">
-                          (contribuenti minimi)
+                          contribuenti minimi
                         </xsl:when>
                         <xsl:when test="$RF='RF03'">
-                          (nuove iniziative produttive) - Non più valido in quanto abrogato dalla legge di stabilità 2015
+                          nuove iniziative produttive - Non più valido in quanto abrogato dalla legge di stabilità 2015
                         </xsl:when>
                         <xsl:when test="$RF='RF04'">
-                          (agricoltura e attività connesse e pesca)
+                          agricoltura e attività connesse e pesca
                         </xsl:when>
                         <xsl:when test="$RF='RF05'">
-                          (vendita sali e tabacchi)
+                          vendita sali e tabacchi
                         </xsl:when>
                         <xsl:when test="$RF='RF06'">
-                          (commercio fiammiferi)
+                          commercio fiammiferi
                         </xsl:when>
                         <xsl:when test="$RF='RF07'">
-                          (editoria)
+                          editoria
                         </xsl:when>
                         <xsl:when test="$RF='RF08'">
-                          (gestione servizi telefonia pubblica)
+                          gestione servizi telefonia pubblica
                         </xsl:when>
                         <xsl:when test="$RF='RF09'">
-                          (rivendita documenti di trasporto pubblico e di sosta)
+                          rivendita documenti di trasporto pubblico e di sosta
                         </xsl:when>
                         <xsl:when test="$RF='RF10'">
-                          (intrattenimenti, giochi e altre attività di cui alla tariffa allegata al DPR 640/72)
+                          intrattenimenti, giochi e altre attività di cui alla tariffa allegata al DPR 640/72
                         </xsl:when>
                         <xsl:when test="$RF='RF11'">
-                          (agenzie viaggi e turismo)
+                          agenzie viaggi e turismo
                         </xsl:when>
                         <xsl:when test="$RF='RF12'">
-                          (agriturismo)
+                          agriturismo
                         </xsl:when>
                         <xsl:when test="$RF='RF13'">
-                          (vendite a domicilio)
+                          vendite a domicilio
                         </xsl:when>
                         <xsl:when test="$RF='RF14'">
-                          (rivendita beni usati, oggetti d’arte,
-                          d’antiquariato o da collezione)
+                          rivendita beni usati, oggetti d’arte,
+                          d’antiquariato o da collezione
                         </xsl:when>
                         <xsl:when test="$RF='RF15'">
-                          (agenzie di vendite all’asta di oggetti d’arte,
-                          antiquariato o da collezione)
+                          agenzie di vendite all’asta di oggetti d’arte,
+                          antiquariato o da collezione
                         </xsl:when>
                         <xsl:when test="$RF='RF16'">
-                          (IVA per cassa P.A.)
+                          IVA per cassa P.A.
                         </xsl:when>
                         <xsl:when test="$RF='RF17'">
-                          (IVA per cassa - art. 32-bis, D.L. 83/2012)
+                          IVA per cassa - art. 32-bis, D.L. 83/2012
                         </xsl:when>
                         <xsl:when test="$RF='RF19'">
-                          (Regime forfettario)
+                          Regime forfettario
                         </xsl:when>
                         <xsl:when test="$RF='RF18'">
-                          (altro)
+                          altro
                         </xsl:when>
                         <xsl:when test="$RF=''">
                         </xsl:when>
