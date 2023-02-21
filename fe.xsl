@@ -42,7 +42,6 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <xsl:variable name="month" select="substring($DateTime,6,2)" />
     <xsl:variable name="day" select="substring($DateTime,9,2)" />
 
-    <xsl:value-of select="' ('" />
     <xsl:value-of select="$day" />
     <xsl:value-of select="' '" />
     <xsl:choose>
@@ -102,7 +101,6 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <xsl:value-of select="':'" />
       <xsl:value-of select="$ss" />
     </xsl:if>
-    <xsl:value-of select="')'" />
   </xsl:template>
 
   <xsl:template match="/">
@@ -600,9 +598,9 @@ avalable at https://github.com/madpilot78/fe-stl.git
                     <xsl:if test="DatiGenerali/DatiGeneraliDocumento/Data">
                       <span class="block text-center pt-4">
                         <xsl:value-of select="DatiGenerali/DatiGeneraliDocumento/Data" />
-                        <xsl:call-template name="FormatDate">
+                        (<xsl:call-template name="FormatDate">
                           <xsl:with-param name="DateTime" select="DatiGenerali/DatiGeneraliDocumento/Data" />
-                        </xsl:call-template>
+                        </xsl:call-template>)
                       </span>
                     </xsl:if>
                   </td>
