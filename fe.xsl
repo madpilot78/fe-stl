@@ -634,6 +634,140 @@ avalable at https://github.com/madpilot78/fe-stl.git
               </tbody>
             </table>
 
+            <xsl:if test="DatiGenerali/DatiGeneraliDocumento/DatiBollo">
+              <table class="table-fixed w-full border border-slate-600">
+                <thead>
+                  <tr>
+                    <th colspan="2" class="border border-slate-600 bg-slate-500 text-amber-600">Bollo</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <xsl:for-each select="DatiGenerali/DatiGeneraliDocumento/DatiBollo">
+                    <tr>
+                      <td class="relative border border-slate-600">
+                        <span class="text-2xs absolute left-0 top-0 p-0.5">Bollo virtuale?</span>
+                        <xsl:if test="BolloVirtuale">
+                          <span class="block text-center pt-4">
+                            <xsl:value-of select="BolloVirtuale" />
+                          </span>
+                        </xsl:if>
+                      </td>
+                      <td class="relative border border-slate-600">
+                        <span class="text-2xs absolute left-0 top-0 p-0.5">Importo</span>
+                        <xsl:if test="ImportoBollo">
+                          <span class="block text-center pt-4">
+                            <xsl:value-of select="ImportoBollo" />
+                          </span>
+                        </xsl:if>
+                      </td>
+                    </tr>
+                  </xsl:for-each>
+                </tbody>
+              </table>
+            </xsl:if>
+
+            <xsl:if test="DatiGenerali/DatiGeneraliDocumento/Causale">
+              <table class="table-fixed w-full border border-slate-600 mt-4">
+                <thead>
+                  <tr>
+                    <th class="border border-slate-600 bg-slate-500 text-amber-600">Causale</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <xsl:for-each select="DatiGenerali/DatiGeneraliDocumento/Causale">
+                    <tr>
+                      <td class="relative border border-slate-600">
+                        <p class="p-1"><xsl:value-of select="current()" /></p>
+                      </td>
+                    </tr>
+                  </xsl:for-each>
+                </tbody>
+              </table>
+            </xsl:if>
+
+            <xsl:if test="DatiGenerali/DatiGeneraliDocumento/DatiRitenuta">
+              <table class="table-fixed w-full border border-slate-600 mt-4">
+                <thead>
+                  <tr>
+                    <th colspan="3" class="border border-slate-600 bg-slate-500 text-amber-600">Ritenuta</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="relative border border-slate-600">
+                      <span class="text-2xs absolute left-0 top-0 p-0.5">Tipo:</span>
+                      <xsl:if test="TipoRitenuta">
+                        <span class="block text-center pt-4">
+                          <xsl:value-of select="TipoRitenuta" />
+                          —
+                          <xsl:variable name="TR">
+                            <xsl:value-of select="TipoRitenuta" />
+                          </xsl:variable>
+                          <xsl:choose>
+                            <xsl:when test="$TR='RT01'">
+                              ritenuta persone fisiche
+                            </xsl:when>
+                            <xsl:when test="$TR='RT02'">
+                              ritenuta persone giuridiche
+                            </xsl:when>
+                            <xsl:when test="$TR='RT03'">
+                              contributo INPS
+                            </xsl:when>
+                            <xsl:when test="$TR='RT04'">
+                              contributo ENASARCO
+                            </xsl:when>
+                            <xsl:when test="$TR='RT05'">
+                              contributo ENPAM
+                            </xsl:when>
+                            <xsl:when test="$TR='RT06'">
+                              altro contributo previdenziale
+                            </xsl:when>
+                            <xsl:when test="$TR=''">
+                            </xsl:when>
+                            <xsl:otherwise>
+                              <span>(!!! codice non previsto !!!)</span>
+                            </xsl:otherwise>
+                          </xsl:choose>
+                        </span>
+                      </xsl:if>
+                    </td>
+                    <td class="relative border border-slate-600">
+                      <span class="text-2xs absolute left-0 top-0 p-0.5">Importo:</span>
+                      <xsl:if test="ImportoRitenuta">
+                        <span class="block text-center pt-4">
+                          <xsl:value-of select="ImportoRitenuta" />
+                        </span>
+                      </xsl:if>
+                    </td>
+                    <td class="relative border border-slate-600">
+                      <span class="text-2xs absolute left-0 top-0 p-0.5">Aliquota (%):</span>
+                      <xsl:if test="AliquotaRitenuta">
+                        <span class="block text-center pt-4">
+                          <xsl:value-of select="AliquotaRitenuta" />
+                        </span>
+                      </xsl:if>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan="3" class="relative border border-slate-600">
+                      <span class="text-2xs absolute left-0 top-0 p-0.5">Causale di pagamento:</span>
+                      <xsl:if test="CausalePagamento">
+                        <span class="block text-center pt-4">
+                          <xsl:value-of select="CausalePagamento" />
+                          <xsl:variable name="CP">
+                            <xsl:value-of select="CausalePagamento" />
+                          </xsl:variable>
+                          <xsl:if test="$CP!=''">
+                            (decodifica come da modello CU)
+                          </xsl:if>
+                        </span>
+                      </xsl:if>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </xsl:if>
+
           </xsl:for-each>
         </div>
       </body>
