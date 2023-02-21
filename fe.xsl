@@ -437,6 +437,158 @@
               </div>
             </xsl:if>
           </div>
+          <xsl:variable name="TOTALBODY">
+            <xsl:value-of select="count(a:FatturaElettronica/FatturaElettronicaBody)" />
+          </xsl:variable>
+          <xsl:for-each select="a:FatturaElettronica/FatturaElettronicaBody">
+            <xsl:if test="$TOTALBODY>1">
+              <h2 class="text-lg text-amber-600 font-bold bg-slate-600 px-2 py-0.5 mt-4">
+                Documento:
+                <span class="font-mono"><xsl:value-of select="position()" /></span>
+                di
+                <span class="font-mono"><xsl:value-of select="$TOTALBODY" /></span>
+              </h2>
+            </xsl:if>
+            <table class="table-fixed w-full border mt-4">
+              <thead>
+                <tr>
+                  <th colspan="3" class="border bg-slate-500 text-amber-600">Dati documento</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="relative border">
+                    <span class="text-2xs absolute left-0 top-0 p-0.5">Tipo documento:</span>
+                    <xsl:if test="DatiGenerali/DatiGeneraliDocumento/TipoDocumento">
+                      <span class="block text-center pt-4">
+                        <xsl:value-of select="DatiGenerali/DatiGeneraliDocumento/TipoDocumento" />
+                        <xsl:variable name="TD">
+                          <xsl:value-of select="DatiGenerali/DatiGeneraliDocumento/TipoDocumento" />
+                        </xsl:variable>
+                        <xsl:choose>
+                          <xsl:when test="$TD='TD01'">
+                            fattura
+                          </xsl:when>
+                          <xsl:when test="$TD='TD02'">
+                            acconto/anticipo su fattura
+                          </xsl:when>
+                          <xsl:when test="$TD='TD03'">
+                            acconto/anticipo su parcella
+                          </xsl:when>
+                          <xsl:when test="$TD='TD04'">
+                            nota di credito
+                          </xsl:when>
+                          <xsl:when test="$TD='TD05'">
+                            nota di debito
+                          </xsl:when>
+                          <xsl:when test="$TD='TD06'">
+                            parcella
+                          </xsl:when>
+                          <xsl:when test="$TD='TD16'">
+                            integrazione fattura
+                            reverse charge interno
+                          </xsl:when>
+                          <xsl:when test="$TD='TD17'">
+                            integrazione/autofattura per
+                            acquisto servizi da estero
+                          </xsl:when>
+                          <xsl:when test="$TD='TD18'">
+                            integrazione per acquisto
+                            beni intracomunitari
+                          </xsl:when>
+                          <xsl:when test="$TD='TD19'">
+                            integrazione/autofattura per
+                            acquisto beni ex art.17 c.2 DPR 633/72
+                          </xsl:when>
+                          <xsl:when test="$TD='TD20'">
+                            autofattura per regolarizzazione e integrazione delle fatture
+                            - ex art.6 c.8 e 9–bis d.lgs. 471/97 o art.46 c.5 D.L. 331/93
+                          </xsl:when>
+                          <xsl:when test="$TD='TD21'">
+                            autofattura per splafonamento
+                          </xsl:when>
+                          <xsl:when test="$TD='TD22'">
+                            estrazione beni da Deposito IVA
+                          </xsl:when>
+                          <xsl:when test="$TD='TD23'">
+                            estrazione beni da Deposito IVA
+                            con versamento IVA
+                          </xsl:when>
+                          <xsl:when test="$TD='TD24'">
+                            fattura differita — art.21 c.4 terzo periodo lett. a – DPR 633/72
+                          </xsl:when>
+                          <xsl:when test="$TD='TD25'">
+                            fattura differita — art.21 c.4 terzo periodo lett. b – DPR 633/72
+                          </xsl:when>
+                          <xsl:when test="$TD='TD26'">
+                            cessione di beni ammortizzabili e per
+                            passaggi interni — art.36 DPR 633/72
+                          </xsl:when>
+                          <xsl:when test="$TD='TD27'">
+                            fattura per autoconsumo o per cessioni
+                            gratuite senza rivalsa
+                          </xsl:when>
+                          <xsl:when test="$TD='TD28'">
+                            acquisti da San Marino con IVA — Fattura Cartacea
+                          </xsl:when>
+                          <xsl:when test="$TD=''">
+                          </xsl:when>
+                          <xsl:otherwise>
+                            <span>(!!! codice non previsto !!!)</span>
+                          </xsl:otherwise>
+                        </xsl:choose>
+                      </span>
+                    </xsl:if>
+                  </td>
+                  <td class="relative border">
+                    <span class="text-2xs absolute left-0 top-0 p-0.5">Numero:</span>
+                    <xsl:if test="DatiGenerali/DatiGeneraliDocumento/Numero">
+                      <span class="block text-center pt-4">
+                        <xsl:value-of select="DatiGenerali/DatiGeneraliDocumento/Numero" />
+                      </span>
+                    </xsl:if>
+                  </td>
+                  <td class="relative border">
+                    <span class="text-2xs absolute left-0 top-0 p-0.5">Data:</span>
+                    <xsl:if test="DatiGenerali/DatiGeneraliDocumento/Data">
+                      <span class="block text-center pt-4">
+                        <xsl:value-of select="DatiGenerali/DatiGeneraliDocumento/Data" />
+                        <xsl:call-template name="FormatDate">
+                          <xsl:with-param name="DateTime" select="DatiGenerali/DatiGeneraliDocumento/Data" />
+                        </xsl:call-template>
+                      </span>
+                    </xsl:if>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="relative border">
+                    <span class="text-2xs absolute left-0 top-0 p-0.5">Valuta:</span>
+                    <xsl:if test="DatiGenerali/DatiGeneraliDocumento/Divisa">
+                      <span class="block text-center pt-4">
+                        <xsl:value-of select="DatiGenerali/DatiGeneraliDocumento/Divisa" />
+                      </span>
+                    </xsl:if>
+                  </td>
+                  <td class="relative border">
+                    <span class="text-2xs absolute left-0 top-0 p-0.5">Importo totale:</span>
+                    <xsl:if test="DatiGenerali/DatiGeneraliDocumento/ImportoTotaleDocumento">
+                      <span class="block text-center pt-4">
+                        <xsl:value-of select="DatiGenerali/DatiGeneraliDocumento/ImportoTotaleDocumento" />
+                      </span>
+                    </xsl:if>
+                  </td>
+                  <td class="relative border">
+                    <span class="text-2xs absolute left-0 top-0 p-0.5">Arrotondamento su totale:</span>
+                    <xsl:if test="DatiGenerali/DatiGeneraliDocumento/Arrotondamento">
+                      <span class="block text-center pt-4">
+                        <xsl:value-of select="DatiGenerali/DatiGeneraliDocumento/Arrotondamento" />
+                      </span>
+                    </xsl:if>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </xsl:for-each>
         </div>
       </body>
     </html>
