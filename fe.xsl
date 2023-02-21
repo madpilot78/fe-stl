@@ -449,15 +449,15 @@
                 <span class="font-mono"><xsl:value-of select="$TOTALBODY" /></span>
               </h2>
             </xsl:if>
-            <table class="table-fixed w-full border mt-4">
+            <table class="table-fixed w-full border border-slate-600 mt-4">
               <thead>
                 <tr>
-                  <th colspan="3" class="border bg-slate-500 text-amber-600">Dati documento</th>
+                  <th colspan="3" class="border border-slate-600 bg-slate-500 text-amber-600">Dati documento</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td class="relative border">
+                  <td class="relative border border-slate-600">
                     <span class="text-2xs absolute left-0 top-0 p-0.5">Tipo documento:</span>
                     <xsl:if test="DatiGenerali/DatiGeneraliDocumento/TipoDocumento">
                       <span class="block text-center pt-4">
@@ -540,7 +540,7 @@
                       </span>
                     </xsl:if>
                   </td>
-                  <td class="relative border">
+                  <td class="relative border border-slate-600">
                     <span class="text-2xs absolute left-0 top-0 p-0.5">Numero:</span>
                     <xsl:if test="DatiGenerali/DatiGeneraliDocumento/Numero">
                       <span class="block text-center pt-4">
@@ -548,7 +548,7 @@
                       </span>
                     </xsl:if>
                   </td>
-                  <td class="relative border">
+                  <td class="relative border border-slate-600">
                     <span class="text-2xs absolute left-0 top-0 p-0.5">Data:</span>
                     <xsl:if test="DatiGenerali/DatiGeneraliDocumento/Data">
                       <span class="block text-center pt-4">
@@ -561,7 +561,7 @@
                   </td>
                 </tr>
                 <tr>
-                  <td class="relative border">
+                  <td class="relative border border-slate-600">
                     <span class="text-2xs absolute left-0 top-0 p-0.5">Valuta:</span>
                     <xsl:if test="DatiGenerali/DatiGeneraliDocumento/Divisa">
                       <span class="block text-center pt-4">
@@ -569,7 +569,7 @@
                       </span>
                     </xsl:if>
                   </td>
-                  <td class="relative border">
+                  <td class="relative border border-slate-600">
                     <span class="text-2xs absolute left-0 top-0 p-0.5">Importo totale:</span>
                     <xsl:if test="DatiGenerali/DatiGeneraliDocumento/ImportoTotaleDocumento">
                       <span class="block text-center pt-4">
@@ -577,7 +577,7 @@
                       </span>
                     </xsl:if>
                   </td>
-                  <td class="relative border">
+                  <td class="relative border border-slate-600">
                     <span class="text-2xs absolute left-0 top-0 p-0.5">Arrotondamento su totale:</span>
                     <xsl:if test="DatiGenerali/DatiGeneraliDocumento/Arrotondamento">
                       <span class="block text-center pt-4">
