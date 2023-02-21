@@ -149,6 +149,34 @@
                   </xsl:if>
                 </xsl:for-each>
               </div>
+              <xsl:for-each select="a:FatturaElettronica/FatturaElettronicaHeader/CedentePrestatore/Contatti">
+                <div class="h-min grid grid-cols-2 gap-y-0.5 gap-x-2">
+                  <xsl:if test="Telefono">
+                    <span class="text-right">
+                      Telefono:
+                    </span>
+                    <span>
+                      <xsl:value-of select="Telefono" />
+                    </span>
+                  </xsl:if>
+                  <xsl:if test="Fax">
+                    <span class="text-right">
+                      Fax:
+                    </span>
+                    <span>
+                      <xsl:value-of select="Fax" />
+                    </span>
+                  </xsl:if>
+                  <xsl:if test="Email">
+                    <span class="text-right">
+                      E-mail:
+                    </span>
+                    <span>
+                      <xsl:value-of select="Email" />
+                    </span>
+                  </xsl:if>
+                </div>
+              </xsl:for-each>
             </div>
             <xsl:for-each select="a:FatturaElettronica/FatturaElettronicaHeader/CedentePrestatore/DatiAnagrafici">
               <div class="flex flex-row flex-wrap gap-y-0.5 gap-x-2 w-72 my-4 ml-72">
