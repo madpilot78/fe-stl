@@ -112,10 +112,10 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="generator" content="fe-stl by Guido Falsi" />
         <link href="fe.css" rel="stylesheet" />
-        <!--
-          Generated using fe-stl by Guido Falsi
-          avalable at https://github.com/madpilot78/fe-stl.git
-        -->
+<xsl:comment>
+Generated using fe-stl by Guido Falsi
+avalable at https://github.com/madpilot78/fe-stl.git
+</xsl:comment>
       </head>
       <body class="font-sans">
         <div class="relative max-w-5xl min-w-[56rem] mx-auto mt-6 p-0">
