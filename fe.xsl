@@ -179,26 +179,26 @@
               </xsl:for-each>
             </div>
             <xsl:for-each select="a:FatturaElettronica/FatturaElettronicaHeader/CedentePrestatore/DatiAnagrafici">
-              <div class="flex flex-row flex-wrap gap-y-0.5 gap-x-2 w-72 my-4 ml-72">
+              <div class="grid grid-cols-2 gap-y-0.5 gap-x-2 my-4 mx-auto">
                 <xsl:if test="IdFiscaleIVA">
-                  <span class="flex-auto text-right">
+                  <span class="text-right">
                     Partita IVA:
                   </span>
-                  <span class="font-mono flex-auto">
+                  <span class="font-mono">
                     <xsl:value-of select="IdFiscaleIVA/IdPaese" />
                     <xsl:value-of select="IdFiscaleIVA/IdCodice" />
                   </span>
                 </xsl:if>
                 <xsl:if test="CodiceFiscale">
-                  <span class="flex-auto text-right">
+                  <span class="text-right">
                     Codice fiscale:
                   </span>
-                  <span class="font-mono flex-auto">
+                  <span class="font-mono">
                     <xsl:value-of select="CodiceFiscale" />
                   </span>
                 </xsl:if>
                 <xsl:if test="RegimeFiscale">
-                  <div class="grow text-xs text-center">
+                  <div class="col-span-2 text-xs text-center">
                     <span>
                       <xsl:value-of select="RegimeFiscale" />
                     </span>
@@ -345,7 +345,7 @@
                   </xsl:if>
                 </xsl:for-each>
                 <xsl:for-each select="a:FatturaElettronica/FatturaElettronicaHeader/CessionarioCommittente/DatiAnagrafici">
-                  <div class="flex flex-row flex-wrap gap-y-0.5 gap-x-2 w-64 mt-4">
+                  <div class="grid grid-cols-2 gap-y-0.5 gap-x-2 mt-4">
                     <xsl:if test="IdFiscaleIVA">
                       <span>
                         Partita IVA:
