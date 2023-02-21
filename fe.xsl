@@ -82,7 +82,246 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="fe.css" rel="stylesheet">
       </head>
-      <body>
+      <body class="font-sans">
+        <div class="max-w-5xl min-w-[56rem] mx-auto p-0">
+          <xsl:if test="a:FatturaElettronica/FatturaElettronicaHeader/CedentePrestatore">
+            <div>
+              <img src="logo.png" class="w-24 h-24"/>
+              <xsl:if test="a:FatturaElettronica/FatturaElettronicaHeader/CedentePrestatore/DatiAnagrafici">
+                <div>
+                  <xsl:if test="Anagrafica/Denominazione">
+                    <span>
+                      <xsl:value-of select="Anagrafica/Denominazione" />
+                    </span>
+                  </xsl:if>
+                  <xsl:if test="Anagrafica/Nome">
+                    <span>
+                      <xsl:value-of select="Anagrafica/Nome" />
+                    </span>
+                  </xsl:if>
+                  <xsl:if test="Anagrafica/Cognome">
+                    <span>
+                      <xsl:value-of select="Anagrafica/Cognome" />
+                    </span>
+                  </xsl:if>
+                  <xsl:if test="Anagrafica/Titolo">
+                    <span>
+                      <xsl:value-of select="Anagrafica/Titolo" />
+                    </span>
+                  </xsl:if>
+                </div>
+              </xsl:if>
+              <xsl:if test="a:FatturaElettronica/FatturaElettronicaHeader/CedentePrestatore/Sede">
+                <div>
+                  <xsl:if test="Indirizzo">
+                    <span>
+                      <xsl:value-of select="Indirizzo" />
+                    </span>
+                  </xsl:if>
+                  <xsl:if test="NumeroCivico">
+                    <span>
+                      <xsl:value-of select="NumeroCivico" />
+                    </span>
+                  </xsl:if>
+                  <xsl:if test="CAP">
+                    <span>
+                      <xsl:value-of select="CAP" />
+                    </span>
+                  </xsl:if>
+                  <xsl:if test="Comune">
+                    <span>
+                      <xsl:value-of select="Comune" />
+                    </span>
+                  </xsl:if>
+                  <xsl:if test="Provincia">
+                    <span>
+                      <xsl:value-of select="Provincia" />
+                    </span>
+                  </xsl:if>
+                  <xsl:if test="Nazione">
+                    <span>
+                      <xsl:value-of select="Nazione" />
+                    </span>
+                  </xsl:if>
+                </div>
+              </xsl:if>
+              <div>
+                <xsl:if test="IdFiscaleIVA">
+                  <span>
+                    Partita IVA:
+                  </span>
+                  <span>
+                    <xsl:value-of select="IdFiscaleIVA/IdPaese" />
+                    <xsl:value-of select="IdFiscaleIVA/IdCodice" />
+                  </span>
+                </xsl:if>
+                <xsl:if test="CodiceFiscale">
+                  <span>
+                    Codice fiscale:
+                  </span>
+                  <span>
+                    <xsl:value-of select="CodiceFiscale" />
+                  </span>
+                </xsl:if>
+                <xsl:if test="RegimeFiscale">
+                  <span>
+                    <xsl:value-of select="RegimeFiscale" />
+                  </span>
+                  <xsl:variable name="RF">
+                    <xsl:value-of select="RegimeFiscale" />
+                  </xsl:variable>
+                  <xsl:choose>
+                    <xsl:when test="$RF='RF01'">
+                      (ordinario)
+                    </xsl:when>
+                    <xsl:when test="$RF='RF02'">
+                      (contribuenti minimi)
+                    </xsl:when>
+                    <xsl:when test="$RF='RF03'">
+                      (nuove iniziative produttive) - Non più valido in quanto abrogato dalla legge di stabilità 2015
+                    </xsl:when>
+                    <xsl:when test="$RF='RF04'">
+                      (agricoltura e attività connesse e pesca)
+                    </xsl:when>
+                    <xsl:when test="$RF='RF05'">
+                      (vendita sali e tabacchi)
+                    </xsl:when>
+                    <xsl:when test="$RF='RF06'">
+                      (commercio fiammiferi)
+                    </xsl:when>
+                    <xsl:when test="$RF='RF07'">
+                      (editoria)
+                    </xsl:when>
+                    <xsl:when test="$RF='RF08'">
+                      (gestione servizi telefonia pubblica)
+                    </xsl:when>
+                    <xsl:when test="$RF='RF09'">
+                      (rivendita documenti di trasporto pubblico e di sosta)
+                    </xsl:when>
+                    <xsl:when test="$RF='RF10'">
+                      (intrattenimenti, giochi e altre attività di cui alla tariffa allegata al DPR 640/72)
+                    </xsl:when>
+                    <xsl:when test="$RF='RF11'">
+                      (agenzie viaggi e turismo)
+                    </xsl:when>
+                    <xsl:when test="$RF='RF12'">
+                      (agriturismo)
+                    </xsl:when>
+                    <xsl:when test="$RF='RF13'">
+                      (vendite a domicilio)
+                    </xsl:when>
+                    <xsl:when test="$RF='RF14'">
+                      (rivendita beni usati, oggetti d’arte,
+                      d’antiquariato o da collezione)
+                    </xsl:when>
+                    <xsl:when test="$RF='RF15'">
+                      (agenzie di vendite all’asta di oggetti d’arte,
+                      antiquariato o da collezione)
+                    </xsl:when>
+                    <xsl:when test="$RF='RF16'">
+                      (IVA per cassa P.A.)
+                    </xsl:when>
+                    <xsl:when test="$RF='RF17'">
+                      (IVA per cassa - art. 32-bis, D.L. 83/2012)
+                    </xsl:when>
+                    <xsl:when test="$RF='RF19'">
+                      (Regime forfettario)
+                    </xsl:when>
+                    <xsl:when test="$RF='RF18'">
+                      (altro)
+                    </xsl:when>
+                    <xsl:when test="$RF=''">
+                    </xsl:when>
+                    <xsl:otherwise>
+                      <span>(!!! codice non previsto !!!)</span>
+                    </xsl:otherwise>
+                  </xsl:choose>
+                </xsl:if>
+              </div>
+            </div>
+          </xsl:if>
+          <xsl:if test="a:FatturaElettronica/FatturaElettronicaHeader/CessionarioCommittente">
+            <div>
+              <xsl:if test="a:FatturaElettronica/FatturaElettronicaHeader/CessionarioCommittente/DatiAnagrafici">
+                <div>
+                  <xsl:if test="Anagrafica/Denominazione">
+                    <span>
+                      <xsl:value-of select="Anagrafica/Denominazione" />
+                    </span>
+                  </xsl:if>
+                  <xsl:if test="Anagrafica/Nome">
+                    <span>
+                      <xsl:value-of select="Anagrafica/Nome" />
+                    </span>
+                  </xsl:if>
+                  <xsl:if test="Anagrafica/Cognome">
+                    <span>
+                      <xsl:value-of select="Anagrafica/Cognome" />
+                    </span>
+                  </xsl:if>
+                  <xsl:if test="Anagrafica/Titolo">
+                    <span>
+                      <xsl:value-of select="Anagrafica/Titolo" />
+                    </span>
+                  </xsl:if>
+                </div>
+              </xsl:if>
+              <xsl:if test="a:FatturaElettronica/FatturaElettronicaHeader/CessionarioCommittente/Sede">
+                <div>
+                  <xsl:if test="Indirizzo">
+                    <span>
+                      <xsl:value-of select="Indirizzo" />
+                    </span>
+                  </xsl:if>
+                  <xsl:if test="NumeroCivico">
+                    <span>
+                      <xsl:value-of select="NumeroCivico" />
+                    </span>
+                  </xsl:if>
+                  <xsl:if test="CAP">
+                    <span>
+                      <xsl:value-of select="CAP" />
+                    </span>
+                  </xsl:if>
+                  <xsl:if test="Comune">
+                    <span>
+                      <xsl:value-of select="Comune" />
+                    </span>
+                  </xsl:if>
+                  <xsl:if test="Provincia">
+                    <span>
+                      <xsl:value-of select="Provincia" />
+                    </span>
+                  </xsl:if>
+                  <xsl:if test="Nazione">
+                    <span>
+                      <xsl:value-of select="Nazione" />
+                    </span>
+                  </xsl:if>
+                </div>
+                <div>
+                  <xsl:if test="IdFiscaleIVA">
+                    <span>
+                      Partita IVA:
+                    </span>
+                    <span>
+                      <xsl:value-of select="IdFiscaleIVA/IdPaese" />
+                      <xsl:value-of select="IdFiscaleIVA/IdCodice" />
+                    </span>
+                  </xsl:if>
+                  <xsl:if test="CodiceFiscale">
+                    <span>
+                      Codice fiscale:
+                    </span>
+                    <span>
+                      <xsl:value-of select="CodiceFiscale" />
+                    </span>
+                  </xsl:if>
+                </div>
+              </xsl:if>
+            </div>
+          </xsl:if>
+        </div>
       </body>
     </html>
   </xsl:template>
