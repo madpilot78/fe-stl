@@ -153,7 +153,7 @@
                 <div class="h-min grid grid-cols-2 gap-y-0.5 gap-x-2">
                   <xsl:if test="Telefono">
                     <span class="text-right">
-                      Telefono:
+                      Tel.:
                     </span>
                     <span>
                       <xsl:value-of select="Telefono" />
