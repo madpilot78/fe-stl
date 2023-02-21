@@ -85,9 +85,9 @@
       <body class="font-sans">
         <div class="relative max-w-5xl min-w-[56rem] mx-auto mt-6 p-0">
           <xsl:if test="a:FatturaElettronica/FatturaElettronicaHeader/CedentePrestatore">
-            <div class="flex flex-row gap-1.5">
+            <div class="flex flex-row gap-x-2">
               <img src="logo.png" class="w-24 h-24 flex-none" />
-              <div class="flex-auto">
+              <div class="grow">
                 <xsl:for-each select="a:FatturaElettronica/FatturaElettronicaHeader/CedentePrestatore/DatiAnagrafici">
                   <xsl:if test="Anagrafica/Denominazione">
                     <span class="block font-bold">
@@ -151,7 +151,7 @@
               </div>
             </div>
             <xsl:for-each select="a:FatturaElettronica/FatturaElettronicaHeader/CedentePrestatore/DatiAnagrafici">
-              <div class="flex flex-row flex-wrap gap-y-0.5 gap-x-2 w-80 my-4 ml-72">
+              <div class="flex flex-row flex-wrap gap-y-0.5 gap-x-2 w-72 my-4 ml-72">
                 <xsl:if test="IdFiscaleIVA">
                   <span class="flex-auto text-right">
                     Partita IVA:
@@ -317,21 +317,21 @@
                   </xsl:if>
                 </xsl:for-each>
                 <xsl:for-each select="a:FatturaElettronica/FatturaElettronicaHeader/CessionarioCommittente/DatiAnagrafici">
-                  <div class="flex flex-row flex-wrap gap-y-0.5 gap-x-2 w-72 mt-4">
+                  <div class="flex flex-row flex-wrap gap-y-0.5 gap-x-2 w-64 mt-4">
                     <xsl:if test="IdFiscaleIVA">
-                      <span class="flex-auto text-right">
+                      <span>
                         Partita IVA:
                       </span>
-                      <span class="font-mono flex-auto">
+                      <span class="font-mono">
                         <xsl:value-of select="IdFiscaleIVA/IdPaese" />
                         <xsl:value-of select="IdFiscaleIVA/IdCodice" />
                       </span>
                     </xsl:if>
                     <xsl:if test="CodiceFiscale">
-                      <span class="flex-auto text-right">
+                      <span>
                         Codice fiscale:
                       </span>
-                      <span class="font-mono flex-auto">
+                      <span class="font-mono">
                         <xsl:value-of select="CodiceFiscale" />
                       </span>
                     </xsl:if>
