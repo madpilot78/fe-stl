@@ -348,9 +348,9 @@
             </xsl:if>
             <xsl:if test="a:FatturaElettronica/FatturaElettronicaHeader/CessionarioCommittente">
               <div class="ml-auto">
-                <div class="text-lg text-amber-600 font-bold">
+                <h3 class="text-lg text-amber-600 font-bold">
                   Cliente:
-                </div>
+                </h3>
                 <div class="shadow border-2 border-black rounded-lg p-4">
                   <xsl:for-each select="a:FatturaElettronica/FatturaElettronicaHeader/CessionarioCommittente/DatiAnagrafici">
                     <xsl:if test="Anagrafica/Denominazione">
