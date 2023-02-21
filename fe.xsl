@@ -84,9 +84,12 @@
       </head>
       <body class="font-sans">
         <div class="relative max-w-5xl min-w-[56rem] mx-auto mt-6 p-0">
+
           <xsl:if test="a:FatturaElettronica/FatturaElettronicaHeader/CedentePrestatore">
             <div class="flex flex-row gap-x-2">
+
               <img src="logo.png" class="w-24 h-24 flex-none" />
+
               <div>
                 <xsl:for-each select="a:FatturaElettronica/FatturaElettronicaHeader/CedentePrestatore/DatiAnagrafici">
                   <xsl:if test="Anagrafica/Denominazione">
@@ -149,6 +152,7 @@
                   </xsl:if>
                 </xsl:for-each>
               </div>
+
               <div class="grid grid-cols-2 gap-y-0.5 gap-x-2 my-4 mx-auto">
                 <xsl:for-each select="a:FatturaElettronica/FatturaElettronicaHeader/CedentePrestatore/DatiAnagrafici">
                   <xsl:if test="IdFiscaleIVA">
@@ -252,6 +256,7 @@
                   </xsl:if>
                 </xsl:for-each>
               </div>
+
               <xsl:for-each select="a:FatturaElettronica/FatturaElettronicaHeader/CedentePrestatore/Contatti">
                 <div class="h-min grid grid-cols-2 gap-y-0.5 gap-x-2">
                   <xsl:if test="Telefono">
@@ -282,7 +287,9 @@
               </xsl:for-each>
             </div>
           </xsl:if>
+
           <div class="flex flex-row gap-x-2">
+
             <xsl:if test="a:FatturaElettronica/FatturaElettronicaHeader/DatiTrasmissione">
               <div class="h-min grid grid-cols-2 gap-y-0.5 gap-x-2 pt-8">
                 <xsl:for-each select="a:FatturaElettronica/FatturaElettronicaHeader/DatiTrasmissione">
@@ -346,6 +353,7 @@
                 </xsl:for-each>
               </div>
             </xsl:if>
+
             <xsl:if test="a:FatturaElettronica/FatturaElettronicaHeader/CessionarioCommittente">
               <div class="ml-auto">
                 <h3 class="text-lg text-amber-600 font-bold">
@@ -436,10 +444,13 @@
                 </div>
               </div>
             </xsl:if>
+
           </div>
+
           <xsl:variable name="TOTALBODY">
             <xsl:value-of select="count(a:FatturaElettronica/FatturaElettronicaBody)" />
           </xsl:variable>
+
           <xsl:for-each select="a:FatturaElettronica/FatturaElettronicaBody">
             <xsl:if test="$TOTALBODY>1">
               <h2 class="text-lg text-amber-600 font-bold bg-slate-600 px-2 py-0.5 mt-4">
@@ -449,6 +460,7 @@
                 <span class="font-mono"><xsl:value-of select="$TOTALBODY" /></span>
               </h2>
             </xsl:if>
+
             <table class="table-fixed w-full border border-slate-600 mt-4">
               <thead>
                 <tr>
@@ -588,6 +600,7 @@
                 </tr>
               </tbody>
             </table>
+
           </xsl:for-each>
         </div>
       </body>
