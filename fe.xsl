@@ -211,10 +211,6 @@ avalable at https://github.com/madpilot78/fe-stl.git
                     </span>
                     <div class="text-xs">
                       <span>
-                        <xsl:value-of select="RegimeFiscale" />
-                      </span>
-                      <span class="mx-1">—</span>
-                      <span>
                         <xsl:variable name="RF">
                           <xsl:value-of select="RegimeFiscale" />
                         </xsl:variable>
@@ -284,6 +280,9 @@ avalable at https://github.com/madpilot78/fe-stl.git
                             <span>(!!! codice non previsto !!!)</span>
                           </xsl:otherwise>
                         </xsl:choose>
+                      </span>
+                      <span class="relative bottom-px font-mono text-2xs text-gray-500 ml-2">
+                        [<xsl:value-of select="RegimeFiscale" />]
                       </span>
                     </div>
                   </xsl:if>
@@ -506,7 +505,6 @@ avalable at https://github.com/madpilot78/fe-stl.git
                     <span class="text-2xs absolute left-0 top-0 p-0.5">Tipo documento:</span>
                     <xsl:if test="DatiGenerali/DatiGeneraliDocumento/TipoDocumento">
                       <span class="block text-center pt-4">
-                        <xsl:value-of select="DatiGenerali/DatiGeneraliDocumento/TipoDocumento" />
                         <xsl:variable name="TD">
                           <xsl:value-of select="DatiGenerali/DatiGeneraliDocumento/TipoDocumento" />
                         </xsl:variable>
@@ -582,6 +580,9 @@ avalable at https://github.com/madpilot78/fe-stl.git
                             <span>(!!! codice non previsto !!!)</span>
                           </xsl:otherwise>
                         </xsl:choose>
+                      </span>
+                      <span class="absolute left-0 bottom-0 font-mono text-xs text-gray-500 p-0.5">
+                        <xsl:value-of select="DatiGenerali/DatiGeneraliDocumento/TipoDocumento" />
                       </span>
                     </xsl:if>
                   </td>
@@ -1076,7 +1077,6 @@ avalable at https://github.com/madpilot78/fe-stl.git
                           <span class="text-2xs absolute left-0 top-0 p-0.5">Modalità</span>
                           <xsl:if test="ModalitaPagamento">
                             <span class="block text-center pt-4">
-                              <xsl:value-of select="ModalitaPagamento" />
                               <xsl:variable name="MP">
                                 <xsl:value-of select="ModalitaPagamento" />
                               </xsl:variable>
@@ -1156,6 +1156,9 @@ avalable at https://github.com/madpilot78/fe-stl.git
                                   <span>(!!! codice non previsto !!!)</span>
                                 </xsl:otherwise>
                               </xsl:choose>
+                            </span>
+                            <span class="absolute left-0 bottom-0 font-mono text-xs text-gray-500 p-0.5">
+                              <xsl:value-of select="ModalitaPagamento" />
                             </span>
                           </xsl:if>
                         </td>
