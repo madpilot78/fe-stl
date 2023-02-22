@@ -1198,7 +1198,7 @@ avalable at https://github.com/madpilot78/fe-stl.git
             </xsl:if>
 
             <xsl:if test="Allegati">
-              <h3 class="text-xl my-6">Informazioni sugli allegati</h3>
+              <h3 class="text-xl mt-8 mb-4">Informazioni sugli allegati</h3>
               <ul class="list-disc list-inside">
                 <xsl:for-each select="Allegati">
                   <li>
