@@ -773,6 +773,264 @@ avalable at https://github.com/madpilot78/fe-stl.git
               </table>
             </xsl:if>
 
+            <xsl:if test="DatiBeniServizi/DettaglioLinee">
+              <table class="table-fixed w-full border border-slate-600 mt-4">
+                <col />
+                <col class="w-24" />
+                <col class="w-32" />
+                <col class="w-24" />
+                <col class="w-32" />
+                <thead>
+                  <tr>
+                    <th colspan="5" class="border border-slate-600 bg-slate-500 text-amber-600">Beni/Servizi</th>
+                  </tr>
+                  <tr>
+                    <th class="border border-slate-600 bg-slate-300 text-amber-600">Descrizione</th>
+                    <th class="border border-slate-600 bg-slate-300 text-amber-600">Quantità</th>
+                    <th class="border border-slate-600 bg-slate-300 text-amber-600">Costo unitario</th>
+                    <th class="border border-slate-600 bg-slate-300 text-amber-600">IVA %</th>
+                    <th class="border border-slate-600 bg-slate-300 text-amber-600">Importo</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <xsl:for-each select="DatiBeniServizi/DettaglioLinee">
+                    <tr>
+                      <td class="border border-slate-600">
+                        <xsl:for-each select="CodiceArticolo">
+                          <span>
+                            [
+                            <xsl:value-of select="CodiceTipo" />
+                            —
+                            <xsl:value-of select="CodiceValore" />
+                            ]
+                          </span>
+                        </xsl:for-each>
+                        <xsl:if test="Descrizione">
+                          <span>
+                            <xsl:value-of select="Descrizione" />
+                          </span>
+                        </xsl:if>
+                      </td>
+                      <td class="border border-slate-600 text-right">
+                        <xsl:if test="Quantita">
+                          <span>
+                            <xsl:value-of select="Quantita" />
+                          </span>
+                        </xsl:if>
+                        <xsl:if test="UnitaMisura">
+                          <span>
+                            <xsl:value-of select="UnitaMisura" />
+                          </span>
+                        </xsl:if>
+                      </td>
+                      <td class="border border-slate-600 text-right">
+                        <xsl:if test="PrezzoUnitario">
+                          <span>
+                            <xsl:value-of select="PrezzoUnitario" />
+                          </span>
+                        </xsl:if>
+                      </td>
+                      <td class="border border-slate-600 text-right">
+                        <xsl:if test="AliquotaIVA">
+                          <span>
+                            <xsl:value-of select="AliquotaIVA" />
+                          </span>
+                        </xsl:if>
+                      </td>
+                      <td class="border border-slate-600 text-right">
+                        <xsl:if test="PrezzoTotale">
+                          <span>
+                            <xsl:value-of select="PrezzoTotale" />
+                          </span>
+                        </xsl:if>
+                      </td>
+                    </tr>
+                  </xsl:for-each>
+                </tbody>
+              </table>
+            </xsl:if>
+
+            <xsl:if test="DatiBeniServizi/DatiRiepilogo">
+              <table class="table-fixed w-full border border-slate-600 mt-4">
+                <col class="w-24"/>
+                <col />
+                <col class="w-32" />
+                <col class="w-32" />
+                <col />
+                <thead>
+                  <tr>
+                    <th colspan="5" class="border border-slate-600 bg-slate-500 text-amber-600">Riepilogo aliquote IVA</th>
+                  </tr>
+                  <tr>
+                    <th class="border border-slate-600 bg-slate-300 text-amber-600">Aliquota</th>
+                    <th class="border border-slate-600 bg-slate-300 text-amber-600">Natura</th>
+                    <th class="border border-slate-600 bg-slate-300 text-amber-600">Imponibile</th>
+                    <th class="border border-slate-600 bg-slate-300 text-amber-600">Imposta</th>
+                    <th class="border border-slate-600 bg-slate-300 text-amber-600">Esigibilità</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <xsl:for-each select="DatiBeniServizi/DatiRiepilogo">
+                    <tr>
+                      <td class="border border-slate-600 text-right">
+                        <xsl:for-each select="AliquotaIVA">
+                          <span>
+                            <xsl:value-of select="AliquotaIVA" />
+                          </span>
+                        </xsl:for-each>
+                      </td>
+                      <td class="border border-slate-600 text-center">
+                        <xsl:if test="Natura">
+                          <span>
+                            <xsl:value-of select="Natura" />
+                          </span>
+                          <xsl:variable name="NAT1">
+                            <xsl:value-of select="Natura" />
+                          </xsl:variable>
+                          <span>
+                            <xsl:choose>
+                              <xsl:when test="$NAT1='N1'">
+                                escluse ex art.15
+                              </xsl:when>
+                              <xsl:when test="$NAT1='N2'">
+                                non soggette
+                              </xsl:when>
+                              <xsl:when test="$NAT1='N2.1'">
+                                non soggette ad IVA — artt. da 7 a 7–septies
+                                del DPR 633/72
+                              </xsl:when>
+                              <xsl:when test="$NAT1='N2.2'">
+                                non soggette — altri casi
+                              </xsl:when>
+                              <xsl:when test="$NAT1='N3'">
+                                non imponibili
+                              </xsl:when>
+                              <xsl:when test="$NAT1='N3.1'">
+                                non imponibili — esportazioni
+                              </xsl:when>
+                              <xsl:when test="$NAT1='N3.2'">
+                                non imponibili — cessioni intracomunitarie
+                              </xsl:when>
+                              <xsl:when test="$NAT1='N3.3'">
+                                non imponibili — cessioni verso S.Marino
+                              </xsl:when>
+                              <xsl:when test="$NAT1='N3.4'">
+                                non imponibili — operazioni assimilate alle
+                                cessioni all'esportazione
+                              </xsl:when>
+                              <xsl:when test="$NAT1='N3.5'">
+                                non imponibili — a seguito di dichiarazioni
+                                d'intento
+                              </xsl:when>
+                              <xsl:when test="$NAT1='N3.6'">
+                                non imponibili — altre operazioni che non
+                                concorrono alla formazione del plafond
+                              </xsl:when>
+                              <xsl:when test="$NAT1='N4'">
+                                esenti
+                              </xsl:when>
+                              <xsl:when test="$NAT1='N5'">
+                                regime del margine / IVA non esposta in fattura
+                              </xsl:when>
+                              <xsl:when test="$NAT1='N6'">
+                                inversione contabile per le operazioni in reverse
+                                charge ovvero nei casi di autofatturazione per
+                                acquisti extra UE di servizi ovvero per importazioni
+                                di beni nei soli casi previsti
+                              </xsl:when>
+                              <xsl:when test="$NAT1='N6.1'">
+                                inversione contabile — cessione di rottami e
+                                altri materiali di recupero
+                              </xsl:when>
+                              <xsl:when test="$NAT1='N6.2'">
+                                inversione contabile — cessione di oro e
+                                argento ai sensi della legge 7/2000 nonché di oreficeria
+                                usata ad OPO
+                              </xsl:when>
+                              <xsl:when test="$NAT1='N6.3'">
+                                inversione contabile — subappalto nel settore
+                                edile
+                              </xsl:when>
+                              <xsl:when test="$NAT1='N6.4'">
+                                inversione contabile — cessione di fabbricati
+                              </xsl:when>
+                              <xsl:when test="$NAT1='N6.5'">
+                                inversione contabile — cessione di telefoni
+                                cellulari
+                              </xsl:when>
+                              <xsl:when test="$NAT1='N6.6'">
+                                inversione contabile — cessione di prodotti
+                                elettronici
+                              </xsl:when>
+                              <xsl:when test="$NAT1='N6.7'">
+                                inversione contabile — prestazioni comparto
+                                edile e settori connessi
+                              </xsl:when>
+                              <xsl:when test="$NAT1='N6.8'">
+                                inversione contabile — operazioni settore
+                                energetico
+                              </xsl:when>
+                              <xsl:when test="$NAT1='N6.9'">
+                                inversione contabile - altri casi
+                              </xsl:when>
+                              <xsl:when test="$NAT1='N7'">
+                                IVA assolta in altro stato UE — prestazione di servizi di
+                                telecomunicazioni, tele-radiodiffusione ed elettronici ex
+                                art. 7–octies, comma 1 lett. a, b, art. 74–sexies DPR 633/72
+                              </xsl:when>
+                              <xsl:otherwise>
+                                <span>(!!! codice non previsto !!!)</span>
+                              </xsl:otherwise>
+                            </xsl:choose>
+                          </span>
+                        </xsl:if>
+                      </td>
+                      <td class="border border-slate-600 text-right">
+                        <xsl:if test="ImponibileImporto">
+                          <span>
+                            <xsl:value-of select="ImponibileImporto" />
+                          </span>
+                        </xsl:if>
+                      </td>
+                      <td class="border border-slate-600 text-right">
+                        <xsl:if test="Imposta">
+                          <span>
+                            <xsl:value-of select="Imposta" />
+                          </span>
+                        </xsl:if>
+                      </td>
+                      <td class="border border-slate-600 text-center">
+                        <xsl:if test="EsigibilitaIVA">
+                          <span>
+                            <xsl:value-of select="EsigibilitaIVA" />
+                          </span>
+                          <xsl:variable name="EI">
+                            <xsl:value-of select="EsigibilitaIVA" />
+                          </xsl:variable>
+                          <span>
+                            <xsl:choose>
+                              <xsl:when test="$EI='I'">
+                                esigibilità immediata
+                              </xsl:when>
+                              <xsl:when test="$EI='D'">
+                                esigibilità differita
+                              </xsl:when>
+                              <xsl:when test="$EI='S'">
+                                scissione dei pagamenti
+                              </xsl:when>
+                              <xsl:otherwise>
+                                <span>(!!! codice non previsto !!!)</span>
+                              </xsl:otherwise>
+                            </xsl:choose>
+                          </span>
+                        </xsl:if>
+                      </td>
+                    </tr>
+                  </xsl:for-each>
+                </tbody>
+              </table>
+            </xsl:if>
+
           </xsl:for-each>
         </div>
       </body>
