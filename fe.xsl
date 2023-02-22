@@ -645,11 +645,16 @@ avalable at https://github.com/madpilot78/fe-stl.git
                   <xsl:for-each select="DatiGenerali/DatiGeneraliDocumento/DatiBollo">
                     <tr>
                       <td class="relative border border-slate-600">
-                        <span class="text-2xs absolute left-0 top-0 p-0.5">Bollo virtuale?</span>
+                        <span class="text-2xs absolute left-0 top-0 p-0.5">Tipo</span>
                         <xsl:if test="BolloVirtuale">
-                          <span class="block text-center pt-4">
+                          <xsl:variable name="BV">
                             <xsl:value-of select="BolloVirtuale" />
-                          </span>
+                          </xsl:variable>
+                          <xsl:if test="$BV!=''">
+                            <span class="block text-center text-sm pt-4">
+                              Bollo assolto ai sensi del decreto MEF 17 GIUGNO 2014 (ART. 6)
+                            </span>
+                          </xsl:if>
                         </xsl:if>
                       </td>
                       <td class="relative border border-slate-600">
