@@ -1031,7 +1031,191 @@ avalable at https://github.com/madpilot78/fe-stl.git
               </table>
             </xsl:if>
 
+            <xsl:if test="DatiPagamento">
+              <table class="table-fixed w-full border border-slate-600 mt-4">
+                <col class="w-36"/>
+                <col />
+                <col class="w-32"/>
+                <thead>
+                  <tr>
+                    <th colspan="4" class="border border-slate-600 bg-slate-500">
+                      <span class="text-amber-600">Dati pagamento</span>
+                      <xsl:if test="DatiPagamento/CondizioniPagamento">
+                        <span class="font-normal">
+                          —
+                          <xsl:value-of select="DatiPagamento/CondizioniPagamento" />
+                          <xsl:variable name="CP">
+                            <xsl:value-of select="DatiPagamento/CondizioniPagamento" />
+                          </xsl:variable>
+                          <xsl:choose>
+                            <xsl:when test="$CP='TP01'">
+                              pagamento a rate
+                            </xsl:when>
+                            <xsl:when test="$CP='TP02'">
+                              pagamento completo
+                            </xsl:when>
+                            <xsl:when test="$CP='TP03'">
+                              anticipo
+                            </xsl:when>
+                            <xsl:when test="$CP=''">
+                            </xsl:when>
+                            <xsl:otherwise>
+                              <span>(!!! codice non previsto !!!)</span>
+                            </xsl:otherwise>
+                          </xsl:choose>
+                        </span>
+                      </xsl:if>
+                    </th>
+                  </tr>
+                </thead>
+                <xsl:if test="DatiPagamento/DettaglioPagamento">
+                  <tbody>
+                    <xsl:for-each select="DatiPagamento/DettaglioPagamento">
+                      <tr>
+                        <td class="relative border border-slate-600">
+                          <span class="text-2xs absolute left-0 top-0 p-0.5">Modalità</span>
+                          <xsl:if test="ModalitaPagamento">
+                            <span class="block text-center pt-4">
+                              <xsl:value-of select="ModalitaPagamento" />
+                              <xsl:variable name="MP">
+                                <xsl:value-of select="ModalitaPagamento" />
+                              </xsl:variable>
+                              <xsl:choose>
+                                <xsl:when test="$MP='MP01'">
+                                  contanti
+                                </xsl:when>
+                                <xsl:when test="$MP='MP02'">
+                                  assegno
+                                </xsl:when>
+                                <xsl:when test="$MP='MP03'">
+                                  assegno circolare
+                                </xsl:when>
+                                <xsl:when test="$MP='MP04'">
+                                  contanti presso Tesoreria
+                                </xsl:when>
+                                <xsl:when test="$MP='MP05'">
+                                  bonifico
+                                </xsl:when>
+                                <xsl:when test="$MP='MP06'">
+                                  vaglia cambiario
+                                </xsl:when>
+                                <xsl:when test="$MP='MP07'">
+                                  bollettino bancario
+                                </xsl:when>
+                                <xsl:when test="$MP='MP08'">
+                                  carta di pagamento
+                                </xsl:when>
+                                <xsl:when test="$MP='MP09'">
+                                  RID
+                                </xsl:when>
+                                <xsl:when test="$MP='MP10'">
+                                  RID utenze
+                                </xsl:when>
+                                <xsl:when test="$MP='MP11'">
+                                  RID veloce
+                                </xsl:when>
+                                <xsl:when test="$MP='MP12'">
+                                  RIBA
+                                </xsl:when>
+                                <xsl:when test="$MP='MP13'">
+                                  MAV
+                                </xsl:when>
+                                <xsl:when test="$MP='MP14'">
+                                  quietanza erario
+                                </xsl:when>
+                                <xsl:when test="$MP='MP15'">
+                                  giroconto su conti di contabilità speciale
+                                </xsl:when>
+                                <xsl:when test="$MP='MP16'">
+                                  domiciliazione bancaria
+                                </xsl:when>
+                                <xsl:when test="$MP='MP17'">
+                                  domiciliazione postale
+                                </xsl:when>
+                                <xsl:when test="$MP='MP18'">
+                                  bollettino di c/c postale
+                                </xsl:when>
+                                <xsl:when test="$MP='MP19'">
+                                  SEPA Direct Debit
+                                </xsl:when>
+                                <xsl:when test="$MP='MP20'">
+                                  SEPA Direct Debit CORE
+                                </xsl:when>
+                                <xsl:when test="$MP='MP21'">
+                                  SEPA Direct Debit B2B
+                                </xsl:when>
+                                <xsl:when test="$MP='MP22'">
+                                  Trattenuta su somme già riscosse
+                                </xsl:when>
+                                <xsl:when test="$MP='MP23'">
+                                  PagoPA
+                                </xsl:when>
+                                <xsl:when test="$MP=''">
+                                </xsl:when>
+                                <xsl:otherwise>
+                                  <span>(!!! codice non previsto !!!)</span>
+                                </xsl:otherwise>
+                              </xsl:choose>
+                            </span>
+                          </xsl:if>
+                        </td>
+                        <td class="relative border border-slate-600">
+                          <span class="text-2xs absolute left-0 top-0 p-0.5">Data scadenza pagamento</span>
+                          <xsl:if test="DataScadenzaPagamento">
+                            <span class="block text-center pt-4">
+                              <xsl:value-of select="DataScadenzaPagamento" />
+
+                              (<xsl:call-template name="FormatDate">
+                                <xsl:with-param name="DateTime" select="DataScadenzaPagamento" />
+                              </xsl:call-template>)
+                            </span>
+                          </xsl:if>
+                        </td>
+                        <td class="relative border border-slate-600">
+                          <span class="text-2xs absolute left-0 top-0 p-0.5">Importo</span>
+                          <xsl:if test="ImportoPagamento">
+                            <span class="block text-right pt-4 text-right">
+                              <xsl:value-of select="ImportoPagamento" />
+                            </span>
+                          </xsl:if>
+                        </td>
+                        <td class="relative border border-slate-600">
+                          <span class="text-2xs absolute left-0 top-0 p-0.5">IBAN</span>
+                          <xsl:if test="IBAN">
+                            <span class="block text-center font-mono pt-4">
+                              <xsl:value-of select="IBAN" />
+                            </span>
+                          </xsl:if>
+                        </td>
+                      </tr>
+                    </xsl:for-each>
+                  </tbody>
+                </xsl:if>
+              </table>
+            </xsl:if>
+
+            <xsl:if test="Allegati">
+              <h3 class="text-xl my-6">Informazioni sugli allegati</h3>
+              <ul class="list-disc list-inside">
+                <xsl:for-each select="Allegati">
+                  <li>
+                    <span class="border border-slate-300 rounded bg-slate-300 px-2 py-1"><xsl:value-of select="NomeAttachment" /></span>
+                    <xsl:if test="FormatoAttachment">
+                      <span class="mx-4"><xsl:value-of select="FormatoAttachment" /></span>
+                    </xsl:if>
+                    <xsl:if test="DescrizioneAttachment">
+                      <span class="mx-4">— <xsl:value-of select="DescrizioneAttachment" /></span>
+                    </xsl:if>
+                  </li>
+                </xsl:for-each>
+              </ul>
+            </xsl:if>
+
           </xsl:for-each>
+        </div>
+
+        <!-- add some space at end of document -->
+        <div class="h-8">
         </div>
       </body>
     </html>
