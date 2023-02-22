@@ -704,8 +704,6 @@ avalable at https://github.com/madpilot78/fe-stl.git
                       <span class="text-2xs absolute left-0 top-0 p-0.5">Tipo:</span>
                       <xsl:if test="TipoRitenuta">
                         <span class="block text-center pt-4">
-                          <xsl:value-of select="TipoRitenuta" />
-                          —
                           <xsl:variable name="TR">
                             <xsl:value-of select="TipoRitenuta" />
                           </xsl:variable>
@@ -734,6 +732,9 @@ avalable at https://github.com/madpilot78/fe-stl.git
                               <span>(!!! codice non previsto !!!)</span>
                             </xsl:otherwise>
                           </xsl:choose>
+                        </span>
+                        <span class="absolute left-0 bottom-0 font-mono text-xs text-gray-500 p-0.5">
+                          <xsl:value-of select="TipoRitenuta" />
                         </span>
                       </xsl:if>
                     </td>
@@ -880,9 +881,9 @@ avalable at https://github.com/madpilot78/fe-stl.git
                           </span>
                         </xsl:if>
                       </td>
-                      <td class="border border-slate-600 text-center">
+                      <td class="relative border border-slate-600 text-center">
                         <xsl:if test="Natura">
-                          <span>
+                          <span class="absolute left-0 bottom-0 font-mono text-xs text-gray-500 p-0.5">
                             <xsl:value-of select="Natura" />
                           </span>
                           <xsl:variable name="NAT1">
