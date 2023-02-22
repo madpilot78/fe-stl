@@ -819,7 +819,7 @@ avalable at https://github.com/madpilot78/fe-stl.git
                           </span>
                         </xsl:if>
                         <xsl:if test="UnitaMisura">
-                          <span>
+                          <span class="ml-2">
                             <xsl:value-of select="UnitaMisura" />
                           </span>
                         </xsl:if>
