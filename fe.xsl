@@ -652,7 +652,7 @@ avalable at https://github.com/madpilot78/fe-stl.git
                           </xsl:variable>
                           <xsl:if test="$BV!=''">
                             <span class="block text-center text-sm pt-4">
-                              Bollo assolto ai sensi del decreto MEF 17 GIUGNO 2014 (ART. 6)
+                              Bollo assolto ai sensi del decreto MEF 17 giugno 2014 (Art. 6)
                             </span>
                           </xsl:if>
                         </xsl:if>
