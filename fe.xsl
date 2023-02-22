@@ -588,7 +588,7 @@ avalable at https://github.com/madpilot78/fe-stl.git
                   <td class="relative border border-slate-600">
                     <span class="text-2xs absolute left-0 top-0 p-0.5">Numero:</span>
                     <xsl:if test="DatiGenerali/DatiGeneraliDocumento/Numero">
-                      <span class="block text-center pt-4">
+                      <span class="block font-mono text-center pt-4">
                         <xsl:value-of select="DatiGenerali/DatiGeneraliDocumento/Numero" />
                       </span>
                     </xsl:if>
@@ -617,7 +617,7 @@ avalable at https://github.com/madpilot78/fe-stl.git
                   <td class="relative border border-slate-600">
                     <span class="text-2xs absolute left-0 top-0 p-0.5">Importo totale:</span>
                     <xsl:if test="DatiGenerali/DatiGeneraliDocumento/ImportoTotaleDocumento">
-                      <span class="block text-center pt-4">
+                      <span class="block font-mono text-center pt-4">
                         <xsl:value-of select="DatiGenerali/DatiGeneraliDocumento/ImportoTotaleDocumento" />
                       </span>
                     </xsl:if>
@@ -625,7 +625,7 @@ avalable at https://github.com/madpilot78/fe-stl.git
                   <td class="relative border border-slate-600">
                     <span class="text-2xs absolute left-0 top-0 p-0.5">Arrotondamento su totale:</span>
                     <xsl:if test="DatiGenerali/DatiGeneraliDocumento/Arrotondamento">
-                      <span class="block text-center pt-4">
+                      <span class="block font-mono text-center pt-4">
                         <xsl:value-of select="DatiGenerali/DatiGeneraliDocumento/Arrotondamento" />
                       </span>
                     </xsl:if>
@@ -660,7 +660,7 @@ avalable at https://github.com/madpilot78/fe-stl.git
                       <td class="relative border border-slate-600">
                         <span class="text-2xs absolute left-0 top-0 p-0.5">Importo</span>
                         <xsl:if test="ImportoBollo">
-                          <span class="block text-center pt-4">
+                          <span class="block font-mono text-center pt-4">
                             <xsl:value-of select="ImportoBollo" />
                           </span>
                         </xsl:if>
@@ -739,7 +739,7 @@ avalable at https://github.com/madpilot78/fe-stl.git
                     <td class="relative border border-slate-600">
                       <span class="text-2xs absolute left-0 top-0 p-0.5">Importo:</span>
                       <xsl:if test="ImportoRitenuta">
-                        <span class="block text-center pt-4">
+                        <span class="block font-mono text-center pt-4">
                           <xsl:value-of select="ImportoRitenuta" />
                         </span>
                       </xsl:if>
@@ -747,7 +747,7 @@ avalable at https://github.com/madpilot78/fe-stl.git
                     <td class="relative border border-slate-600">
                       <span class="text-2xs absolute left-0 top-0 p-0.5">Aliquota (%):</span>
                       <xsl:if test="AliquotaRitenuta">
-                        <span class="block text-center pt-4">
+                        <span class="block font-mono text-center pt-4">
                           <xsl:value-of select="AliquotaRitenuta" />
                         </span>
                       </xsl:if>
@@ -813,7 +813,7 @@ avalable at https://github.com/madpilot78/fe-stl.git
                       </td>
                       <td class="border border-slate-600 text-right">
                         <xsl:if test="Quantita">
-                          <span>
+                          <span class="font-mono">
                             <xsl:value-of select="Quantita" />
                           </span>
                         </xsl:if>
@@ -825,21 +825,21 @@ avalable at https://github.com/madpilot78/fe-stl.git
                       </td>
                       <td class="border border-slate-600 text-right">
                         <xsl:if test="PrezzoUnitario">
-                          <span>
+                          <span class="font-mono">
                             <xsl:value-of select="PrezzoUnitario" />
                           </span>
                         </xsl:if>
                       </td>
                       <td class="border border-slate-600 text-right">
                         <xsl:if test="AliquotaIVA">
-                          <span>
+                          <span class="font-mono">
                             <xsl:value-of select="AliquotaIVA" />
                           </span>
                         </xsl:if>
                       </td>
                       <td class="border border-slate-600 text-right">
                         <xsl:if test="PrezzoTotale">
-                          <span>
+                          <span class="font-mono">
                             <xsl:value-of select="PrezzoTotale" />
                           </span>
                         </xsl:if>
@@ -874,7 +874,7 @@ avalable at https://github.com/madpilot78/fe-stl.git
                     <tr>
                       <td class="border border-slate-600 text-right">
                         <xsl:for-each select="AliquotaIVA">
-                          <span>
+                          <span class="font-mono">
                             <xsl:value-of select="AliquotaIVA" />
                           </span>
                         </xsl:for-each>
@@ -987,14 +987,14 @@ avalable at https://github.com/madpilot78/fe-stl.git
                       </td>
                       <td class="border border-slate-600 text-right">
                         <xsl:if test="ImponibileImporto">
-                          <span>
+                          <span class="font-mono">
                             <xsl:value-of select="ImponibileImporto" />
                           </span>
                         </xsl:if>
                       </td>
                       <td class="border border-slate-600 text-right">
                         <xsl:if test="Imposta">
-                          <span>
+                          <span class="font-mono">
                             <xsl:value-of select="Imposta" />
                           </span>
                         </xsl:if>
@@ -1174,7 +1174,7 @@ avalable at https://github.com/madpilot78/fe-stl.git
                         <td class="relative border border-slate-600">
                           <span class="text-2xs absolute left-0 top-0 p-0.5">Importo</span>
                           <xsl:if test="ImportoPagamento">
-                            <span class="block text-right pt-4 text-right">
+                            <span class="block font-mono text-right pt-4 text-right">
                               <xsl:value-of select="ImportoPagamento" />
                             </span>
                           </xsl:if>
