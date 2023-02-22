@@ -873,11 +873,11 @@ avalable at https://github.com/madpilot78/fe-stl.git
                   <xsl:for-each select="DatiBeniServizi/DatiRiepilogo">
                     <tr>
                       <td class="border border-slate-600 text-right">
-                        <xsl:for-each select="AliquotaIVA">
+                        <xsl:if test="AliquotaIVA">
                           <span class="font-mono">
                             <xsl:value-of select="AliquotaIVA" />
                           </span>
-                        </xsl:for-each>
+                        </xsl:if>
                       </td>
                       <td class="border border-slate-600 text-center">
                         <xsl:if test="Natura">
