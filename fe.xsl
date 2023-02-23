@@ -599,9 +599,11 @@ avalable at https://github.com/madpilot78/fe-stl.git
                     <xsl:if test="DatiGenerali/DatiGeneraliDocumento/Data">
                       <span class="block text-center pt-4">
                         <xsl:value-of select="DatiGenerali/DatiGeneraliDocumento/Data" />
-                        (<xsl:call-template name="FormatDate">
-                          <xsl:with-param name="DateTime" select="DatiGenerali/DatiGeneraliDocumento/Data" />
-                        </xsl:call-template>)
+                        <span class="text-sm text-gray-700 ml-4">
+                          <xsl:call-template name="FormatDate">
+                            <xsl:with-param name="DateTime" select="DatiGenerali/DatiGeneraliDocumento/Data" />
+                          </xsl:call-template>
+                        </span>
                       </span>
                     </xsl:if>
                   </td>
@@ -1168,10 +1170,11 @@ avalable at https://github.com/madpilot78/fe-stl.git
                           <xsl:if test="DataScadenzaPagamento">
                             <span class="block text-center pt-4">
                               <xsl:value-of select="DataScadenzaPagamento" />
-
-                              (<xsl:call-template name="FormatDate">
-                                <xsl:with-param name="DateTime" select="DataScadenzaPagamento" />
-                              </xsl:call-template>)
+                              <span class="text-sm text-gray-700 ml-4">
+                                <xsl:call-template name="FormatDate">
+                                  <xsl:with-param name="DateTime" select="DataScadenzaPagamento" />
+                                </xsl:call-template>
+                              </span>
                             </span>
                           </xsl:if>
                         </td>
