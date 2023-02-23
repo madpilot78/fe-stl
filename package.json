@@ -8,7 +8,10 @@
   },
   "keywords": [
     "xml",
-    "stl"
+    "stl",
+    "fattura",
+    "elettronica"
+    "fattura elettronica"
   ],
   "scripts": {
     "build": "npx tailwindcss -m -i ./base.css -o ./fe.css",
