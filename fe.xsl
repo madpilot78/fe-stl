@@ -1030,6 +1030,15 @@ avalable at https://github.com/madpilot78/fe-stl.git
                         </xsl:if>
                       </td>
                     </tr>
+                    <xsl:if test="RiferimentoNormativo">
+                      <tr>
+                        <td colspan="5">
+                          <span class="whitespace-pre-line m-1">
+                            <xsl:value-of select="RiferimentoNormativo" />
+                          </span>
+                        </td>
+                      </tr>
+                    </xsl:if>
                   </xsl:for-each>
                 </tbody>
               </table>
