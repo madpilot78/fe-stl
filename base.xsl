@@ -109,7 +109,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="generator" content="fe-stl by Guido Falsi" />
-        <link href="fe.css" rel="stylesheet" />
+        @@includeCSS
 <xsl:comment>
 Generated using fe-stl by Guido Falsi
 avalable at https://github.com/madpilot78/fe-stl.git

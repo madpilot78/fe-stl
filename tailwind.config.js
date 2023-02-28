@@ -1,5 +1,5 @@
 module.exports = {
-  content: ['fe.xsl'],
+  content: ['base.xsl'],
   theme: {
     extend: {
       fontSize: {

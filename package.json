@@ -14,13 +14,18 @@
     "fattura elettronica"
   ],
   "scripts": {
-    "build": "npx tailwindcss -m -i ./base.css -o ./fe.css",
-    "dev": "npx tailwindcss -i ./base.css -o ./fe.css",
+    "build": "npx grunt prod",
+    "clean": "npx grunt clean",
+    "dev": "npx grunt dev",
     "watch": "npx tailwindcss -i ./base.css -o ./fe.css --watch"
   },
   "author": "Guido Falsi <mad@madpilot.net>",
   "license": "BSD-3-Clause",
   "devDependencies": {
+    "grunt": "^1.6.1",
+    "grunt-contrib-clean": "^2.0.1",
+    "grunt-replace": "^2.0.2",
+    "grunt-shell": "^4.0.0",
     "tailwindcss": "^3.2.7"
   }
 }
