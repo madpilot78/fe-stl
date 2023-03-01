@@ -1054,29 +1054,29 @@ avalable at https://github.com/madpilot78/fe-stl.git
                     <th colspan="4" class="border border-slate-600 bg-slate-500">
                       <span class="text-amber-600">Dati pagamento</span>
                       <xsl:if test="DatiPagamento/CondizioniPagamento">
-                        <span class="font-normal">
-                          —
+                        —
+                        <span class="font-mono font-normal text-slate-900">
                           <xsl:value-of select="DatiPagamento/CondizioniPagamento" />
-                          <xsl:variable name="CP">
-                            <xsl:value-of select="DatiPagamento/CondizioniPagamento" />
-                          </xsl:variable>
-                          <xsl:choose>
-                            <xsl:when test="$CP='TP01'">
-                              pagamento a rate
-                            </xsl:when>
-                            <xsl:when test="$CP='TP02'">
-                              pagamento completo
-                            </xsl:when>
-                            <xsl:when test="$CP='TP03'">
-                              anticipo
-                            </xsl:when>
-                            <xsl:when test="$CP=''">
-                            </xsl:when>
-                            <xsl:otherwise>
-                              <span>(!!! codice non previsto !!!)</span>
-                            </xsl:otherwise>
-                          </xsl:choose>
                         </span>
+                        <xsl:variable name="CP">
+                          <xsl:value-of select="DatiPagamento/CondizioniPagamento" />
+                        </xsl:variable>
+                        <xsl:choose>
+                          <xsl:when test="$CP='TP01'">
+                            pagamento a rate
+                          </xsl:when>
+                          <xsl:when test="$CP='TP02'">
+                            pagamento completo
+                          </xsl:when>
+                          <xsl:when test="$CP='TP03'">
+                            anticipo
+                          </xsl:when>
+                          <xsl:when test="$CP=''">
+                          </xsl:when>
+                          <xsl:otherwise>
+                            <span>(!!! codice non previsto !!!)</span>
+                          </xsl:otherwise>
+                        </xsl:choose>
                       </xsl:if>
                     </th>
                   </tr>
