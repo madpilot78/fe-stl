@@ -504,7 +504,7 @@ avalable at https://github.com/madpilot78/fe-stl.git
                   <td class="relative border border-slate-600">
                     <span class="text-2xs absolute left-0 top-0 p-0.5">Tipo documento:</span>
                     <xsl:if test="DatiGenerali/DatiGeneraliDocumento/TipoDocumento">
-                      <span class="block text-center pt-4">
+                      <span class="block text-center pt-4 ml-7">
                         <xsl:variable name="TD">
                           <xsl:value-of select="DatiGenerali/DatiGeneraliDocumento/TipoDocumento" />
                         </xsl:variable>
@@ -888,7 +888,7 @@ avalable at https://github.com/madpilot78/fe-stl.git
                           <span class="absolute left-0 bottom-0 font-mono text-xs text-gray-500 p-0.5">
                             <xsl:value-of select="Natura" />
                           </span>
-                          <span class="mx-2">
+                          <span class="ml-7">
                             <xsl:variable name="NAT1">
                               <xsl:value-of select="Natura" />
                             </xsl:variable>
@@ -1088,7 +1088,7 @@ avalable at https://github.com/madpilot78/fe-stl.git
                         <td class="relative border border-slate-600">
                           <span class="text-2xs absolute left-0 top-0 p-0.5">Modalità</span>
                           <xsl:if test="ModalitaPagamento">
-                            <span class="block text-center pt-4">
+                            <span class="block text-center pt-4 ml-7">
                               <xsl:variable name="MP">
                                 <xsl:value-of select="ModalitaPagamento" />
                               </xsl:variable>
