@@ -888,10 +888,10 @@ avalable at https://github.com/madpilot78/fe-stl.git
                           <span class="absolute left-0 bottom-0 font-mono text-xs text-gray-500 p-0.5">
                             <xsl:value-of select="Natura" />
                           </span>
-                          <xsl:variable name="NAT1">
-                            <xsl:value-of select="Natura" />
-                          </xsl:variable>
                           <span>
+                            <xsl:variable name="NAT1">
+                              <xsl:value-of select="Natura" />
+                            </xsl:variable>
                             <xsl:choose>
                               <xsl:when test="$NAT1='N1'">
                                 escluse ex art.15
