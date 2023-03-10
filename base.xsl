@@ -1033,7 +1033,7 @@ avalable at https://github.com/madpilot78/fe-stl.git
                     <xsl:if test="RiferimentoNormativo">
                       <tr>
                         <td colspan="5">
-                          <span class="whitespace-pre-line m-1">
+                          <span class="whitespace-pre-line mx-2 leading-normal">
                             <xsl:value-of select="RiferimentoNormativo" />
                           </span>
                         </td>
