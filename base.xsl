@@ -330,7 +330,7 @@ avalable at https://github.com/madpilot78/fe-stl.git
                         Identificativo del trasmittente:
                       </span>
                       <span class="font-mono">
-                        <xsl:value-of select="IdTrasmittente/IdPaese" />
+                        <span class="text-slate-500 mr-2"><xsl:value-of select="IdTrasmittente/IdPaese" /></span>
                         <xsl:value-of select="IdTrasmittente/IdCodice" />
                       </span>
                   </xsl:if>
