@@ -648,7 +648,7 @@ avalable at https://github.com/madpilot78/fe-stl.git
                   <xsl:for-each select="DatiGenerali/DatiGeneraliDocumento/DatiBollo">
                     <tr>
                       <td class="relative border border-slate-600">
-                        <span class="text-2xs absolute left-0 top-0 p-0.5">Tipo</span>
+                        <span class="text-2xs absolute left-0 top-0 p-0.5">Tipo:</span>
                         <xsl:if test="BolloVirtuale">
                           <xsl:variable name="BV">
                             <xsl:value-of select="BolloVirtuale" />
@@ -661,7 +661,7 @@ avalable at https://github.com/madpilot78/fe-stl.git
                         </xsl:if>
                       </td>
                       <td class="relative border border-slate-600">
-                        <span class="text-2xs absolute left-0 top-0 p-0.5">Importo</span>
+                        <span class="text-2xs absolute left-0 top-0 p-0.5">Importo:</span>
                         <xsl:if test="ImportoBollo">
                           <span class="block font-mono text-center pt-4">
                             <xsl:value-of select="ImportoBollo" />
