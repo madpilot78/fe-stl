@@ -20,20 +20,18 @@ payments section actually only supports the fields for basic bank money order
 
 ## Technical Details
 
-This project is using [Tailwindcss](https://tailwindcss.com) to generate the CSS file, due to this at present the output HTML includes an external CSS file.
+This project is using [Tailwindcss](https://tailwindcss.com) to generate the CSS file. The generated CSS is embedded in the template using [Grunt](https://gruntjs.com).
 
-To generate the CSS file just run:
+To generate the final stl file run:
 
 ```sh
 npm install
 npm run build
 ```
 
-The generated HTML expects the CSS file to be in the same directory.
-
 ### Customizing Logo
 
-The generated HTML includes a logo.png image from the directory it is in.
+The generated HTML includes a logo.png image from the same directory it is in.
 
 The image should be 96x96 pixel, other sizes will be scaled.
 
