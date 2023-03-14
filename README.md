@@ -15,7 +15,7 @@ Due to this the present version of the file does not have support for all
 the sections that cen be present in fattura elettronica.
 
 For example I'm ignoring the DDT, Vehicles, contracts etc. sections and the
-payments section actually only support the fields for basic bank money order
+payments section actually only supports the fields for basic bank money order
 (bonifico) payments.
 
 ## Technical Details
