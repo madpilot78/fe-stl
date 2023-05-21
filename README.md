@@ -5,11 +5,11 @@ transform an Italian electronic invoice into a decent HTML file.
 
 I'm using the xsl file provided by Agenzia delle entrate as a starting point.
 
-I'm publishing this in case someone find it useful.
+I'm publishing this in case someone finds it useful.
 
 ## Description/origin
 
-I created this file for my own needs, giving priority to the features I use.
+I created this repository for my own needs, giving priority to the features I use.
 
 Due to this the present version of the file does not have support for all
 the sections that cen be present in fattura elettronica.
