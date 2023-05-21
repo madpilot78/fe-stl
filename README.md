@@ -12,7 +12,7 @@ I'm publishing this in case someone finds it useful.
 I created this repository for my own needs, giving priority to the features I use.
 
 Due to this the present version of the file does not have support for all
-the sections that cen be present in fattura elettronica.
+the sections that can be present in fattura elettronica.
 
 For example I'm ignoring the DDT, Vehicles, contracts etc. sections and the
 payments section actually only supports the fields for basic bank money order
