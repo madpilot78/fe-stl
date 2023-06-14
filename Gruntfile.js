@@ -1,9 +1,7 @@
 module.exports = function(grunt) {
   grunt.initConfig({
     shell: {
-      options: {
-        // Task-specific options go here.
-      },
+      options: {},
       prod: {
         command: 'npx tailwindcss -m -i ./base.css -o ./fe.css'
       },
