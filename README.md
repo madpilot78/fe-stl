@@ -35,4 +35,4 @@ The generated HTML includes a logo.png image from the same directory it is in.
 
 The image should be 96x96 pixel, other sizes will be scaled.
 
-The file included in this repository is a simple placeholder I generated using GIMP.
+The file included in this repository is a simple placeholder I generated using [GIMP](https://www.gimp.org).
