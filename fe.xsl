@@ -32,7 +32,8 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 <xsl:stylesheet
   version="1.1"
   xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-  xmlns:a="http://ivaservizi.agenziaentrate.gov.it/docs/xsd/fatture/v1.2">
+  xmlns:a="http://ivaservizi.agenziaentrate.gov.it/docs/xsd/fatture/v1.2"
+>
   <xsl:output method="html" />
 
   <xsl:template name="FormatDate">
@@ -45,45 +46,19 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <xsl:value-of select="$day" />
     <xsl:value-of select="' '" />
     <xsl:choose>
-      <xsl:when test="$month = '1' or $month = '01'">
-        Gennaio
-      </xsl:when>
-      <xsl:when test="$month = '2' or $month = '02'">
-        Febbraio
-      </xsl:when>
-      <xsl:when test="$month = '3' or $month = '03'">
-        Marzo
-      </xsl:when>
-      <xsl:when test="$month = '4' or $month = '04'">
-        Aprile
-      </xsl:when>
-      <xsl:when test="$month = '5' or $month = '05'">
-        Maggio
-      </xsl:when>
-      <xsl:when test="$month = '6' or $month = '06'">
-        Giugno
-      </xsl:when>
-      <xsl:when test="$month = '7' or $month = '07'">
-        Luglio
-      </xsl:when>
-      <xsl:when test="$month = '8' or $month = '08'">
-        Agosto
-      </xsl:when>
-      <xsl:when test="$month = '9' or $month = '09'">
-        Settembre
-      </xsl:when>
-      <xsl:when test="$month = '10'">
-        Ottobre
-      </xsl:when>
-      <xsl:when test="$month = '11'">
-        Novembre
-      </xsl:when>
-      <xsl:when test="$month = '12'">
-        Dicembre
-      </xsl:when>
-      <xsl:otherwise>
-        Mese non riconosciuto
-      </xsl:otherwise>
+      <xsl:when test="$month = '1' or $month = '01'">Gennaio</xsl:when>
+      <xsl:when test="$month = '2' or $month = '02'">Febbraio</xsl:when>
+      <xsl:when test="$month = '3' or $month = '03'">Marzo</xsl:when>
+      <xsl:when test="$month = '4' or $month = '04'">Aprile</xsl:when>
+      <xsl:when test="$month = '5' or $month = '05'">Maggio</xsl:when>
+      <xsl:when test="$month = '6' or $month = '06'">Giugno</xsl:when>
+      <xsl:when test="$month = '7' or $month = '07'">Luglio</xsl:when>
+      <xsl:when test="$month = '8' or $month = '08'">Agosto</xsl:when>
+      <xsl:when test="$month = '9' or $month = '09'">Settembre</xsl:when>
+      <xsl:when test="$month = '10'">Ottobre</xsl:when>
+      <xsl:when test="$month = '11'">Novembre</xsl:when>
+      <xsl:when test="$month = '12'">Dicembre</xsl:when>
+      <xsl:otherwise>Mese non riconosciuto</xsl:otherwise>
     </xsl:choose>
     <xsl:value-of select="' '" />
     <xsl:value-of select="$year" />
@@ -109,7 +84,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="generator" content="fe-stl by Guido Falsi" />
-        <style>/*! tailwindcss v3.3.5 | MIT License | https://tailwindcss.com*/*,:after,:before{box-sizing:border-box;border:0 solid #e5e7eb}:after,:before{--tw-content:""}html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;-o-tab-size:4;tab-size:4;font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;font-feature-settings:normal;font-variation-settings:normal}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:initial}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button;background-color:initial;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:initial}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0}fieldset,legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::-moz-placeholder,textarea::-moz-placeholder{opacity:1;color:#9ca3af}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]{display:none}*,::backdrop,:after,:before{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:#3b82f680;--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: }.absolute{position:absolute}.relative{position:relative}.bottom-0{bottom:0}.bottom-px{bottom:1px}.left-0{left:0}.top-0{top:0}.mx-2{margin-left:.5rem;margin-right:.5rem}.mx-4{margin-left:1rem;margin-right:1rem}.mx-auto{margin-left:auto;margin-right:auto}.my-4{margin-top:1rem}.mb-4,.my-4{margin-bottom:1rem}.ml-2{margin-left:.5rem}.ml-4{margin-left:1rem}.ml-7{margin-left:1.75rem}.ml-auto{margin-left:auto}.mr-2{margin-right:.5rem}.mt-4{margin-top:1rem}.mt-6{margin-top:1.5rem}.mt-8{margin-top:2rem}.block{display:block}.flex{display:flex}.table{display:table}.grid{display:grid}.h-24{height:6rem}.h-8{height:2rem}.h-min{height:-moz-min-content;height:min-content}.w-24{width:6rem}.w-32{width:8rem}.w-36{width:9rem}.w-full{width:100%}.min-w-\[56rem\]{min-width:56rem}.max-w-5xl{max-width:64rem}.flex-none{flex:none}.table-fixed{table-layout:fixed}.list-inside{list-style-position:inside}.list-disc{list-style-type:disc}.grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.flex-row{flex-direction:row}.gap-x-2{-moz-column-gap:.5rem;column-gap:.5rem}.gap-y-0{row-gap:0}.gap-y-0\.5{row-gap:.125rem}.whitespace-pre-line{white-space:pre-line}.rounded{border-radius:.25rem}.rounded-lg{border-radius:.5rem}.border{border-width:1px}.border-2{border-width:2px}.border-black{--tw-border-opacity:1;border-color:rgb(0 0 0/var(--tw-border-opacity))}.border-slate-300{--tw-border-opacity:1;border-color:rgb(203 213 225/var(--tw-border-opacity))}.border-slate-600{--tw-border-opacity:1;border-color:rgb(71 85 105/var(--tw-border-opacity))}.bg-slate-300{--tw-bg-opacity:1;background-color:rgb(203 213 225/var(--tw-bg-opacity))}.bg-slate-500{--tw-bg-opacity:1;background-color:rgb(100 116 139/var(--tw-bg-opacity))}.bg-slate-600{--tw-bg-opacity:1;background-color:rgb(71 85 105/var(--tw-bg-opacity))}.p-0{padding:0}.p-0\.5{padding:.125rem}.p-1{padding:.25rem}.p-4{padding:1rem}.px-2{padding-left:.5rem;padding-right:.5rem}.py-0{padding-top:0;padding-bottom:0}.py-0\.5{padding-top:.125rem;padding-bottom:.125rem}.py-1{padding-top:.25rem;padding-bottom:.25rem}.pt-4{padding-top:1rem}.pt-8{padding-top:2rem}.text-center{text-align:center}.text-right{text-align:right}.font-mono{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace}.font-sans{font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji}.text-2xs{font-size:.625rem;line-height:.875rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:.75rem;line-height:1rem}.font-bold{font-weight:700}.font-normal{font-weight:400}.leading-normal{line-height:1.5}.text-amber-600{--tw-text-opacity:1;color:rgb(217 119 6/var(--tw-text-opacity))}.text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128/var(--tw-text-opacity))}.text-gray-700{--tw-text-opacity:1;color:rgb(55 65 81/var(--tw-text-opacity))}.text-slate-500{--tw-text-opacity:1;color:rgb(100 116 139/var(--tw-text-opacity))}.text-slate-900{--tw-text-opacity:1;color:rgb(15 23 42/var(--tw-text-opacity))}.shadow{--tw-shadow:0 1px 3px 0 #0000001a,0 1px 2px -1px #0000001a;--tw-shadow-colored:0 1px 3px 0 var(--tw-shadow-color),0 1px 2px -1px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)}</style>
+        <style>/*! tailwindcss v3.3.5 | MIT License | https://tailwindcss.com*/*,:after,:before{box-sizing:border-box;border:0 solid #e5e7eb}:after,:before{--tw-content:""}html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;-o-tab-size:4;tab-size:4;font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;font-feature-settings:normal;font-variation-settings:normal}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:initial}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button;background-color:initial;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:initial}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0}fieldset,legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::-moz-placeholder,textarea::-moz-placeholder{opacity:1;color:#9ca3af}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]{display:none}*,::backdrop,:after,:before{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:#3b82f680;--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: }.absolute{position:absolute}.relative{position:relative}.bottom-0{bottom:0}.bottom-px{bottom:1px}.left-0{left:0}.right-0{right:0}.top-0{top:0}.m-0{margin:0}.m-0\.5{margin:.125rem}.mx-2{margin-left:.5rem;margin-right:.5rem}.mx-4{margin-left:1rem;margin-right:1rem}.mx-auto{margin-left:auto;margin-right:auto}.my-4{margin-top:1rem}.mb-4,.my-4{margin-bottom:1rem}.ml-2{margin-left:.5rem}.ml-4{margin-left:1rem}.ml-7{margin-left:1.75rem}.ml-auto{margin-left:auto}.mr-2{margin-right:.5rem}.mt-4{margin-top:1rem}.mt-6{margin-top:1.5rem}.mt-8{margin-top:2rem}.block{display:block}.flex{display:flex}.table{display:table}.grid{display:grid}.h-24{height:6rem}.h-8{height:2rem}.h-min{height:-moz-min-content;height:min-content}.w-24{width:6rem}.w-32{width:8rem}.w-36{width:9rem}.w-full{width:100%}.min-w-\[56rem\]{min-width:56rem}.max-w-5xl{max-width:64rem}.flex-none{flex:none}.table-fixed{table-layout:fixed}.list-inside{list-style-position:inside}.list-disc{list-style-type:disc}.grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.flex-row{flex-direction:row}.gap-x-2{-moz-column-gap:.5rem;column-gap:.5rem}.gap-y-0{row-gap:0}.gap-y-0\.5{row-gap:.125rem}.whitespace-pre-line{white-space:pre-line}.rounded{border-radius:.25rem}.rounded-lg{border-radius:.5rem}.border{border-width:1px}.border-2{border-width:2px}.border-black{--tw-border-opacity:1;border-color:rgb(0 0 0/var(--tw-border-opacity))}.border-slate-300{--tw-border-opacity:1;border-color:rgb(203 213 225/var(--tw-border-opacity))}.border-slate-600{--tw-border-opacity:1;border-color:rgb(71 85 105/var(--tw-border-opacity))}.bg-slate-300{--tw-bg-opacity:1;background-color:rgb(203 213 225/var(--tw-bg-opacity))}.bg-slate-500{--tw-bg-opacity:1;background-color:rgb(100 116 139/var(--tw-bg-opacity))}.bg-slate-600{--tw-bg-opacity:1;background-color:rgb(71 85 105/var(--tw-bg-opacity))}.p-0{padding:0}.p-0\.5{padding:.125rem}.p-1{padding:.25rem}.p-4{padding:1rem}.px-2{padding-left:.5rem;padding-right:.5rem}.py-0{padding-top:0;padding-bottom:0}.py-0\.5{padding-top:.125rem;padding-bottom:.125rem}.py-1{padding-top:.25rem;padding-bottom:.25rem}.pt-4{padding-top:1rem}.pt-8{padding-top:2rem}.text-center{text-align:center}.text-right{text-align:right}.font-mono{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace}.font-sans{font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji}.text-2xs{font-size:.625rem;line-height:.875rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:.75rem;line-height:1rem}.font-bold{font-weight:700}.font-normal{font-weight:400}.leading-normal{line-height:1.5}.text-amber-600{--tw-text-opacity:1;color:rgb(217 119 6/var(--tw-text-opacity))}.text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128/var(--tw-text-opacity))}.text-gray-700{--tw-text-opacity:1;color:rgb(55 65 81/var(--tw-text-opacity))}.text-slate-500{--tw-text-opacity:1;color:rgb(100 116 139/var(--tw-text-opacity))}.text-slate-900{--tw-text-opacity:1;color:rgb(15 23 42/var(--tw-text-opacity))}.shadow{--tw-shadow:0 1px 3px 0 #0000001a,0 1px 2px -1px #0000001a;--tw-shadow-colored:0 1px 3px 0 var(--tw-shadow-color),0 1px 2px -1px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)}</style>
 <xsl:comment>
 Generated using fe-stl by Guido Falsi
 avalable at https://github.com/madpilot78/fe-stl.git
@@ -117,10 +92,8 @@ avalable at https://github.com/madpilot78/fe-stl.git
       </head>
       <body class="font-sans">
         <div class="relative max-w-5xl min-w-[56rem] mx-auto mt-6 p-0">
-
           <xsl:if test="a:FatturaElettronica/FatturaElettronicaHeader/CedentePrestatore">
             <div class="flex flex-row gap-x-2">
-
               <img src="logo.png" class="w-24 h-24 flex-none" />
 
               <div>
@@ -189,26 +162,20 @@ avalable at https://github.com/madpilot78/fe-stl.git
               <div class="grid grid-cols-2 gap-y-0.5 gap-x-2 my-4 mx-auto">
                 <xsl:for-each select="a:FatturaElettronica/FatturaElettronicaHeader/CedentePrestatore/DatiAnagrafici">
                   <xsl:if test="IdFiscaleIVA">
-                    <span class="text-right">
-                      Partita IVA:
-                    </span>
+                    <span class="text-right">Partita IVA:</span>
                     <span class="font-mono">
                       <xsl:value-of select="IdFiscaleIVA/IdPaese" />
                       <xsl:value-of select="IdFiscaleIVA/IdCodice" />
                     </span>
                   </xsl:if>
                   <xsl:if test="CodiceFiscale">
-                    <span class="text-right">
-                      Codice fiscale:
-                    </span>
+                    <span class="text-right">Codice fiscale:</span>
                     <span class="font-mono">
                       <xsl:value-of select="CodiceFiscale" />
                     </span>
                   </xsl:if>
                   <xsl:if test="RegimeFiscale">
-                    <span class="text-xs text-right">
-                      Regime fiscale:
-                    </span>
+                    <span class="text-xs text-right">Regime fiscale:</span>
                     <div class="text-xs">
                       <span>
                         <xsl:variable name="RF">
@@ -292,25 +259,19 @@ avalable at https://github.com/madpilot78/fe-stl.git
               <xsl:for-each select="a:FatturaElettronica/FatturaElettronicaHeader/CedentePrestatore/Contatti">
                 <div class="h-min grid grid-cols-2 gap-y-0.5 gap-x-2">
                   <xsl:if test="Telefono">
-                    <span class="text-right">
-                      Tel.:
-                    </span>
+                    <span class="text-right">Tel.:</span>
                     <span>
                       <xsl:value-of select="Telefono" />
                     </span>
                   </xsl:if>
                   <xsl:if test="Fax">
-                    <span class="text-right">
-                      Fax:
-                    </span>
+                    <span class="text-right">Fax:</span>
                     <span>
                       <xsl:value-of select="Fax" />
                     </span>
                   </xsl:if>
                   <xsl:if test="Email">
-                    <span class="text-right">
-                      E-mail:
-                    </span>
+                    <span class="text-right">E-mail:</span>
                     <span>
                       <xsl:value-of select="Email" />
                     </span>
@@ -321,66 +282,67 @@ avalable at https://github.com/madpilot78/fe-stl.git
           </xsl:if>
 
           <div class="flex flex-row gap-x-2">
-
             <xsl:if test="a:FatturaElettronica/FatturaElettronicaHeader/DatiTrasmissione">
               <div class="h-min grid grid-cols-2 gap-y-0.5 gap-x-2 pt-8">
                 <xsl:for-each select="a:FatturaElettronica/FatturaElettronicaHeader/DatiTrasmissione">
                   <xsl:if test="IdTrasmittente">
-                      <span class="text-right">
-                        Identificativo del trasmittente:
+                    <span class="text-right">
+                      Identificativo del trasmittente:
+                    </span>
+                    <span class="font-mono">
+                      <span class="text-slate-500 mr-2">
+                        <xsl:value-of select="IdTrasmittente/IdPaese" />
                       </span>
-                      <span class="font-mono">
-                        <span class="text-slate-500 mr-2"><xsl:value-of select="IdTrasmittente/IdPaese" /></span>
-                        <xsl:value-of select="IdTrasmittente/IdCodice" />
-                      </span>
+                      <xsl:value-of select="IdTrasmittente/IdCodice" />
+                    </span>
                   </xsl:if>
                   <xsl:if test="ProgressivoInvio">
-                      <span class="text-right">
-                        Progressivo di invio:
-                      </span>
-                      <span class="font-mono">
-                        <xsl:value-of select="ProgressivoInvio" />
-                      </span>
+                    <span class="text-right">
+                      Progressivo di invio:
+                    </span>
+                    <span class="font-mono">
+                      <xsl:value-of select="ProgressivoInvio" />
+                    </span>
                   </xsl:if>
                   <xsl:if test="FormatoTrasmissione">
-                      <span class="text-right">
-                        Formato Trasmissione:
-                      </span>
-                      <span class="font-mono">
-                        <xsl:value-of select="FormatoTrasmissione" />
-                      </span>
+                    <span class="text-right">
+                      Formato Trasmissione:
+                    </span>
+                    <span class="font-mono">
+                      <xsl:value-of select="FormatoTrasmissione" />
+                    </span>
                   </xsl:if>
                   <xsl:if test="CodiceDestinatario">
-                      <span class="text-right">
-                        Codice identificativo destinatario:
-                      </span>
-                      <span class="font-mono">
-                        <xsl:value-of select="CodiceDestinatario" />
-                      </span>
+                    <span class="text-right">
+                      Codice identificativo destinatario:
+                    </span>
+                    <span class="font-mono">
+                      <xsl:value-of select="CodiceDestinatario" />
+                    </span>
                   </xsl:if>
                   <xsl:if test="ContattiTrasmittente/Telefono">
-                      <span class="text-right">
-                        Telefono del trasmittente:
-                      </span>
-                      <span class="font-mono">
-                        <xsl:value-of select="ContattiTrasmittente/Telefono" />
-                      </span>
+                    <span class="text-right">
+                      Telefono del trasmittente:
+                    </span>
+                    <span class="font-mono">
+                      <xsl:value-of select="ContattiTrasmittente/Telefono" />
+                    </span>
                   </xsl:if>
                   <xsl:if test="ContattiTrasmittente/Email">
-                      <span class="text-right">
-                        E-mail del trasmittente:
-                      </span>
-                      <span class="font-mono">
-                        <xsl:value-of select="ContattiTrasmittente/Email" />
-                      </span>
+                    <span class="text-right">
+                      E-mail del trasmittente:
+                    </span>
+                    <span class="font-mono">
+                      <xsl:value-of select="ContattiTrasmittente/Email" />
+                    </span>
                   </xsl:if>
                   <xsl:if test="PECDestinatario">
-                      <span class="text-right">
-                        Destinatario PEC:
-                      </span>
-                      <span class="font-mono">
-                        <xsl:value-of select="PECDestinatario" />
-                      </span>
+                    <span class="text-right">
+                      Destinatario PEC:
+                    </span>
+                    <span class="font-mono">
+                      <xsl:value-of select="PECDestinatario" />
+                    </span>
                   </xsl:if>
                 </xsl:for-each>
               </div>
@@ -388,9 +350,7 @@ avalable at https://github.com/madpilot78/fe-stl.git
 
             <xsl:if test="a:FatturaElettronica/FatturaElettronicaHeader/CessionarioCommittente">
               <div class="ml-auto">
-                <h3 class="text-lg text-amber-600 font-bold">
-                  Cliente:
-                </h3>
+                <h3 class="text-lg text-amber-600 font-bold">Cliente:</h3>
                 <div class="shadow border-2 border-black rounded-lg p-4">
                   <xsl:for-each select="a:FatturaElettronica/FatturaElettronicaHeader/CessionarioCommittente/DatiAnagrafici">
                     <xsl:if test="Anagrafica/Denominazione">
@@ -455,18 +415,14 @@ avalable at https://github.com/madpilot78/fe-stl.git
                   <xsl:for-each select="a:FatturaElettronica/FatturaElettronicaHeader/CessionarioCommittente/DatiAnagrafici">
                     <div class="grid grid-cols-2 gap-y-0.5 gap-x-2 mt-4">
                       <xsl:if test="IdFiscaleIVA">
-                        <span>
-                          Partita IVA:
-                        </span>
+                        <span>Partita IVA:</span>
                         <span class="font-mono">
                           <xsl:value-of select="IdFiscaleIVA/IdPaese" />
                           <xsl:value-of select="IdFiscaleIVA/IdCodice" />
                         </span>
                       </xsl:if>
                       <xsl:if test="CodiceFiscale">
-                        <span>
-                          Codice fiscale:
-                        </span>
+                        <span>Codice fiscale:</span>
                         <span class="font-mono">
                           <xsl:value-of select="CodiceFiscale" />
                         </span>
@@ -476,7 +432,6 @@ avalable at https://github.com/madpilot78/fe-stl.git
                 </div>
               </div>
             </xsl:if>
-
           </div>
 
           <xsl:variable name="TOTALBODY">
@@ -487,9 +442,13 @@ avalable at https://github.com/madpilot78/fe-stl.git
             <xsl:if test="$TOTALBODY>1">
               <h2 class="text-lg text-amber-600 font-bold bg-slate-600 px-2 py-0.5 mt-4">
                 Documento:
-                <span class="font-mono"><xsl:value-of select="position()" /></span>
+                <span class="font-mono">
+                  <xsl:value-of select="position()"/>
+                </span>
                 di
-                <span class="font-mono"><xsl:value-of select="$TOTALBODY" /></span>
+                <span class="font-mono">
+                  <xsl:value-of select="$TOTALBODY"/>
+                </span>
               </h2>
             </xsl:if>
 
@@ -815,14 +774,14 @@ avalable at https://github.com/madpilot78/fe-stl.git
                           </span>
                         </xsl:if>
                       </td>
-                      <td class="border border-slate-600 text-right">
+                      <td class="relative border border-slate-600 text-right">
                         <xsl:if test="Quantita">
-                          <span class="font-mono">
+                          <span class="font-mono block text-center">
                             <xsl:value-of select="Quantita" />
                           </span>
                         </xsl:if>
                         <xsl:if test="UnitaMisura">
-                          <span class="ml-2">
+                          <span class="absolute right-0 bottom-0 m-0.5 text-xs">
                             <xsl:value-of select="UnitaMisura" />
                           </span>
                         </xsl:if>
@@ -1226,13 +1185,11 @@ avalable at https://github.com/madpilot78/fe-stl.git
                 </xsl:for-each>
               </ul>
             </xsl:if>
-
           </xsl:for-each>
         </div>
 
         <!-- add some space at end of document -->
-        <div class="h-8">
-        </div>
+        <div class="h-8"></div>
       </body>
     </html>
   </xsl:template>
