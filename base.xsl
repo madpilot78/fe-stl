@@ -815,14 +815,14 @@ avalable at https://github.com/madpilot78/fe-stl.git
                           </span>
                         </xsl:if>
                       </td>
-                      <td class="border border-slate-600 text-right">
+                      <td class="relative border border-slate-600 text-right">
                         <xsl:if test="Quantita">
-                          <span class="font-mono">
+                          <span class="font-mono block text-center">
                             <xsl:value-of select="Quantita" />
                           </span>
                         </xsl:if>
                         <xsl:if test="UnitaMisura">
-                          <span class="ml-2">
+                          <span class="absolute right-0 bottom-0 m-0.5 text-xs">
                             <xsl:value-of select="UnitaMisura" />
                           </span>
                         </xsl:if>
