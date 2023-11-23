@@ -32,7 +32,8 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 <xsl:stylesheet
   version="1.1"
   xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-  xmlns:a="http://ivaservizi.agenziaentrate.gov.it/docs/xsd/fatture/v1.2">
+  xmlns:a="http://ivaservizi.agenziaentrate.gov.it/docs/xsd/fatture/v1.2"
+>
   <xsl:output method="html" />
 
   <xsl:template name="FormatDate">
@@ -45,45 +46,19 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <xsl:value-of select="$day" />
     <xsl:value-of select="' '" />
     <xsl:choose>
-      <xsl:when test="$month = '1' or $month = '01'">
-        Gennaio
-      </xsl:when>
-      <xsl:when test="$month = '2' or $month = '02'">
-        Febbraio
-      </xsl:when>
-      <xsl:when test="$month = '3' or $month = '03'">
-        Marzo
-      </xsl:when>
-      <xsl:when test="$month = '4' or $month = '04'">
-        Aprile
-      </xsl:when>
-      <xsl:when test="$month = '5' or $month = '05'">
-        Maggio
-      </xsl:when>
-      <xsl:when test="$month = '6' or $month = '06'">
-        Giugno
-      </xsl:when>
-      <xsl:when test="$month = '7' or $month = '07'">
-        Luglio
-      </xsl:when>
-      <xsl:when test="$month = '8' or $month = '08'">
-        Agosto
-      </xsl:when>
-      <xsl:when test="$month = '9' or $month = '09'">
-        Settembre
-      </xsl:when>
-      <xsl:when test="$month = '10'">
-        Ottobre
-      </xsl:when>
-      <xsl:when test="$month = '11'">
-        Novembre
-      </xsl:when>
-      <xsl:when test="$month = '12'">
-        Dicembre
-      </xsl:when>
-      <xsl:otherwise>
-        Mese non riconosciuto
-      </xsl:otherwise>
+      <xsl:when test="$month = '1' or $month = '01'">Gennaio</xsl:when>
+      <xsl:when test="$month = '2' or $month = '02'">Febbraio</xsl:when>
+      <xsl:when test="$month = '3' or $month = '03'">Marzo</xsl:when>
+      <xsl:when test="$month = '4' or $month = '04'">Aprile</xsl:when>
+      <xsl:when test="$month = '5' or $month = '05'">Maggio</xsl:when>
+      <xsl:when test="$month = '6' or $month = '06'">Giugno</xsl:when>
+      <xsl:when test="$month = '7' or $month = '07'">Luglio</xsl:when>
+      <xsl:when test="$month = '8' or $month = '08'">Agosto</xsl:when>
+      <xsl:when test="$month = '9' or $month = '09'">Settembre</xsl:when>
+      <xsl:when test="$month = '10'">Ottobre</xsl:when>
+      <xsl:when test="$month = '11'">Novembre</xsl:when>
+      <xsl:when test="$month = '12'">Dicembre</xsl:when>
+      <xsl:otherwise>Mese non riconosciuto</xsl:otherwise>
     </xsl:choose>
     <xsl:value-of select="' '" />
     <xsl:value-of select="$year" />
@@ -117,10 +92,8 @@ avalable at https://github.com/madpilot78/fe-stl.git
       </head>
       <body class="font-sans">
         <div class="relative max-w-5xl min-w-[56rem] mx-auto mt-6 p-0">
-
           <xsl:if test="a:FatturaElettronica/FatturaElettronicaHeader/CedentePrestatore">
             <div class="flex flex-row gap-x-2">
-
               <img src="logo.png" class="w-24 h-24 flex-none" />
 
               <div>
@@ -189,26 +162,20 @@ avalable at https://github.com/madpilot78/fe-stl.git
               <div class="grid grid-cols-2 gap-y-0.5 gap-x-2 my-4 mx-auto">
                 <xsl:for-each select="a:FatturaElettronica/FatturaElettronicaHeader/CedentePrestatore/DatiAnagrafici">
                   <xsl:if test="IdFiscaleIVA">
-                    <span class="text-right">
-                      Partita IVA:
-                    </span>
+                    <span class="text-right">Partita IVA:</span>
                     <span class="font-mono">
                       <xsl:value-of select="IdFiscaleIVA/IdPaese" />
                       <xsl:value-of select="IdFiscaleIVA/IdCodice" />
                     </span>
                   </xsl:if>
                   <xsl:if test="CodiceFiscale">
-                    <span class="text-right">
-                      Codice fiscale:
-                    </span>
+                    <span class="text-right">Codice fiscale:</span>
                     <span class="font-mono">
                       <xsl:value-of select="CodiceFiscale" />
                     </span>
                   </xsl:if>
                   <xsl:if test="RegimeFiscale">
-                    <span class="text-xs text-right">
-                      Regime fiscale:
-                    </span>
+                    <span class="text-xs text-right">Regime fiscale:</span>
                     <div class="text-xs">
                       <span>
                         <xsl:variable name="RF">
@@ -292,25 +259,19 @@ avalable at https://github.com/madpilot78/fe-stl.git
               <xsl:for-each select="a:FatturaElettronica/FatturaElettronicaHeader/CedentePrestatore/Contatti">
                 <div class="h-min grid grid-cols-2 gap-y-0.5 gap-x-2">
                   <xsl:if test="Telefono">
-                    <span class="text-right">
-                      Tel.:
-                    </span>
+                    <span class="text-right">Tel.:</span>
                     <span>
                       <xsl:value-of select="Telefono" />
                     </span>
                   </xsl:if>
                   <xsl:if test="Fax">
-                    <span class="text-right">
-                      Fax:
-                    </span>
+                    <span class="text-right">Fax:</span>
                     <span>
                       <xsl:value-of select="Fax" />
                     </span>
                   </xsl:if>
                   <xsl:if test="Email">
-                    <span class="text-right">
-                      E-mail:
-                    </span>
+                    <span class="text-right">E-mail:</span>
                     <span>
                       <xsl:value-of select="Email" />
                     </span>
@@ -321,66 +282,67 @@ avalable at https://github.com/madpilot78/fe-stl.git
           </xsl:if>
 
           <div class="flex flex-row gap-x-2">
-
             <xsl:if test="a:FatturaElettronica/FatturaElettronicaHeader/DatiTrasmissione">
               <div class="h-min grid grid-cols-2 gap-y-0.5 gap-x-2 pt-8">
                 <xsl:for-each select="a:FatturaElettronica/FatturaElettronicaHeader/DatiTrasmissione">
                   <xsl:if test="IdTrasmittente">
-                      <span class="text-right">
-                        Identificativo del trasmittente:
+                    <span class="text-right">
+                      Identificativo del trasmittente:
+                    </span>
+                    <span class="font-mono">
+                      <span class="text-slate-500 mr-2">
+                        <xsl:value-of select="IdTrasmittente/IdPaese" />
                       </span>
-                      <span class="font-mono">
-                        <span class="text-slate-500 mr-2"><xsl:value-of select="IdTrasmittente/IdPaese" /></span>
-                        <xsl:value-of select="IdTrasmittente/IdCodice" />
-                      </span>
+                      <xsl:value-of select="IdTrasmittente/IdCodice" />
+                    </span>
                   </xsl:if>
                   <xsl:if test="ProgressivoInvio">
-                      <span class="text-right">
-                        Progressivo di invio:
-                      </span>
-                      <span class="font-mono">
-                        <xsl:value-of select="ProgressivoInvio" />
-                      </span>
+                    <span class="text-right">
+                      Progressivo di invio:
+                    </span>
+                    <span class="font-mono">
+                      <xsl:value-of select="ProgressivoInvio" />
+                    </span>
                   </xsl:if>
                   <xsl:if test="FormatoTrasmissione">
-                      <span class="text-right">
-                        Formato Trasmissione:
-                      </span>
-                      <span class="font-mono">
-                        <xsl:value-of select="FormatoTrasmissione" />
-                      </span>
+                    <span class="text-right">
+                      Formato Trasmissione:
+                    </span>
+                    <span class="font-mono">
+                      <xsl:value-of select="FormatoTrasmissione" />
+                    </span>
                   </xsl:if>
                   <xsl:if test="CodiceDestinatario">
-                      <span class="text-right">
-                        Codice identificativo destinatario:
-                      </span>
-                      <span class="font-mono">
-                        <xsl:value-of select="CodiceDestinatario" />
-                      </span>
+                    <span class="text-right">
+                      Codice identificativo destinatario:
+                    </span>
+                    <span class="font-mono">
+                      <xsl:value-of select="CodiceDestinatario" />
+                    </span>
                   </xsl:if>
                   <xsl:if test="ContattiTrasmittente/Telefono">
-                      <span class="text-right">
-                        Telefono del trasmittente:
-                      </span>
-                      <span class="font-mono">
-                        <xsl:value-of select="ContattiTrasmittente/Telefono" />
-                      </span>
+                    <span class="text-right">
+                      Telefono del trasmittente:
+                    </span>
+                    <span class="font-mono">
+                      <xsl:value-of select="ContattiTrasmittente/Telefono" />
+                    </span>
                   </xsl:if>
                   <xsl:if test="ContattiTrasmittente/Email">
-                      <span class="text-right">
-                        E-mail del trasmittente:
-                      </span>
-                      <span class="font-mono">
-                        <xsl:value-of select="ContattiTrasmittente/Email" />
-                      </span>
+                    <span class="text-right">
+                      E-mail del trasmittente:
+                    </span>
+                    <span class="font-mono">
+                      <xsl:value-of select="ContattiTrasmittente/Email" />
+                    </span>
                   </xsl:if>
                   <xsl:if test="PECDestinatario">
-                      <span class="text-right">
-                        Destinatario PEC:
-                      </span>
-                      <span class="font-mono">
-                        <xsl:value-of select="PECDestinatario" />
-                      </span>
+                    <span class="text-right">
+                      Destinatario PEC:
+                    </span>
+                    <span class="font-mono">
+                      <xsl:value-of select="PECDestinatario" />
+                    </span>
                   </xsl:if>
                 </xsl:for-each>
               </div>
@@ -388,9 +350,7 @@ avalable at https://github.com/madpilot78/fe-stl.git
 
             <xsl:if test="a:FatturaElettronica/FatturaElettronicaHeader/CessionarioCommittente">
               <div class="ml-auto">
-                <h3 class="text-lg text-amber-600 font-bold">
-                  Cliente:
-                </h3>
+                <h3 class="text-lg text-amber-600 font-bold">Cliente:</h3>
                 <div class="shadow border-2 border-black rounded-lg p-4">
                   <xsl:for-each select="a:FatturaElettronica/FatturaElettronicaHeader/CessionarioCommittente/DatiAnagrafici">
                     <xsl:if test="Anagrafica/Denominazione">
@@ -455,18 +415,14 @@ avalable at https://github.com/madpilot78/fe-stl.git
                   <xsl:for-each select="a:FatturaElettronica/FatturaElettronicaHeader/CessionarioCommittente/DatiAnagrafici">
                     <div class="grid grid-cols-2 gap-y-0.5 gap-x-2 mt-4">
                       <xsl:if test="IdFiscaleIVA">
-                        <span>
-                          Partita IVA:
-                        </span>
+                        <span>Partita IVA:</span>
                         <span class="font-mono">
                           <xsl:value-of select="IdFiscaleIVA/IdPaese" />
                           <xsl:value-of select="IdFiscaleIVA/IdCodice" />
                         </span>
                       </xsl:if>
                       <xsl:if test="CodiceFiscale">
-                        <span>
-                          Codice fiscale:
-                        </span>
+                        <span>Codice fiscale:</span>
                         <span class="font-mono">
                           <xsl:value-of select="CodiceFiscale" />
                         </span>
@@ -476,7 +432,6 @@ avalable at https://github.com/madpilot78/fe-stl.git
                 </div>
               </div>
             </xsl:if>
-
           </div>
 
           <xsl:variable name="TOTALBODY">
@@ -487,9 +442,13 @@ avalable at https://github.com/madpilot78/fe-stl.git
             <xsl:if test="$TOTALBODY>1">
               <h2 class="text-lg text-amber-600 font-bold bg-slate-600 px-2 py-0.5 mt-4">
                 Documento:
-                <span class="font-mono"><xsl:value-of select="position()" /></span>
+                <span class="font-mono">
+                  <xsl:value-of select="position()"/>
+                </span>
                 di
-                <span class="font-mono"><xsl:value-of select="$TOTALBODY" /></span>
+                <span class="font-mono">
+                  <xsl:value-of select="$TOTALBODY"/>
+                </span>
               </h2>
             </xsl:if>
 
@@ -1226,13 +1185,11 @@ avalable at https://github.com/madpilot78/fe-stl.git
                 </xsl:for-each>
               </ul>
             </xsl:if>
-
           </xsl:for-each>
         </div>
 
         <!-- add some space at end of document -->
-        <div class="h-8">
-        </div>
+        <div class="h-8"></div>
       </body>
     </html>
   </xsl:template>
