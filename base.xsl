@@ -283,13 +283,13 @@ avalable at https://github.com/madpilot78/fe-stl.git
 
           <div class="flex flex-row gap-x-2">
             <xsl:if test="a:FatturaElettronica/FatturaElettronicaHeader/DatiTrasmissione">
-              <div class="h-min grid grid-cols-2 gap-y-0.5 gap-x-2 pt-8">
+              <div class="text-sm h-min grid grid-cols-2 gap-y-0.5 gap-x-2 pt-8">
                 <xsl:for-each select="a:FatturaElettronica/FatturaElettronicaHeader/DatiTrasmissione">
                   <xsl:if test="IdTrasmittente">
                     <span class="text-right">
                       Identificativo del trasmittente:
                     </span>
-                    <span class="font-mono">
+                    <span class="font-mono truncate">
                       <span class="text-slate-500 mr-2">
                         <xsl:value-of select="IdTrasmittente/IdPaese" />
                       </span>
@@ -300,7 +300,7 @@ avalable at https://github.com/madpilot78/fe-stl.git
                     <span class="text-right">
                       Progressivo di invio:
                     </span>
-                    <span class="font-mono">
+                    <span class="font-mono truncate">
                       <xsl:value-of select="ProgressivoInvio" />
                     </span>
                   </xsl:if>
@@ -308,7 +308,7 @@ avalable at https://github.com/madpilot78/fe-stl.git
                     <span class="text-right">
                       Formato Trasmissione:
                     </span>
-                    <span class="font-mono">
+                    <span class="font-mono truncate">
                       <xsl:value-of select="FormatoTrasmissione" />
                     </span>
                   </xsl:if>
@@ -316,7 +316,7 @@ avalable at https://github.com/madpilot78/fe-stl.git
                     <span class="text-right">
                       Codice identificativo destinatario:
                     </span>
-                    <span class="font-mono">
+                    <span class="font-mono truncate">
                       <xsl:value-of select="CodiceDestinatario" />
                     </span>
                   </xsl:if>
@@ -324,7 +324,7 @@ avalable at https://github.com/madpilot78/fe-stl.git
                     <span class="text-right">
                       Telefono del trasmittente:
                     </span>
-                    <span class="font-mono">
+                    <span class="font-mono truncate">
                       <xsl:value-of select="ContattiTrasmittente/Telefono" />
                     </span>
                   </xsl:if>
@@ -332,7 +332,7 @@ avalable at https://github.com/madpilot78/fe-stl.git
                     <span class="text-right">
                       E-mail del trasmittente:
                     </span>
-                    <span class="font-mono">
+                    <span class="font-mono truncate">
                       <xsl:value-of select="ContattiTrasmittente/Email" />
                     </span>
                   </xsl:if>
@@ -340,7 +340,7 @@ avalable at https://github.com/madpilot78/fe-stl.git
                     <span class="text-right">
                       Destinatario PEC:
                     </span>
-                    <span class="font-mono">
+                    <span class="font-mono truncate">
                       <xsl:value-of select="PECDestinatario" />
                     </span>
                   </xsl:if>
@@ -349,7 +349,7 @@ avalable at https://github.com/madpilot78/fe-stl.git
             </xsl:if>
 
             <xsl:if test="a:FatturaElettronica/FatturaElettronicaHeader/CessionarioCommittente">
-              <div class="ml-auto">
+              <div class="ml-auto min-w-fit">
                 <h3 class="text-lg text-amber-600 font-bold">Cliente:</h3>
                 <div class="shadow border-2 border-black rounded-lg p-4">
                   <xsl:for-each select="a:FatturaElettronica/FatturaElettronicaHeader/CessionarioCommittente/DatiAnagrafici">
